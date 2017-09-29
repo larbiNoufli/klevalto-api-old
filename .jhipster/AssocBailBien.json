@@ -1,0 +1,62 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "tiers",
+            "otherEntityName": "tiers",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "bail",
+            "otherEntityName": "bail",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "bien",
+            "otherEntityName": "bien",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "isActif",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "datedebutjuridique",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "datefinjuridique",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "isValidated",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "validationDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "isRejected",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "refusalDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "valeurAchatDuBien",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20170921181108",
+    "entityTableName": "assoc_bail_bien",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

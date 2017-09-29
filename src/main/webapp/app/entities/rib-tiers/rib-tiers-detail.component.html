@@ -1,0 +1,65 @@
+
+<div *ngIf="ribTiers">
+    <h2><span jhiTranslate="sergicApp.ribTiers.detail.title">Rib Tiers</span> {{ribTiers.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="sergicApp.ribTiers.domiciliation">Domiciliation</span></dt>
+        <dd>
+            <span>{{ribTiers.domiciliation}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.ribTiers.codeBanque">Code Banque</span></dt>
+        <dd>
+            <span>{{ribTiers.codeBanque}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.ribTiers.codeGuichet">Code Guichet</span></dt>
+        <dd>
+            <span>{{ribTiers.codeGuichet}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.ribTiers.numCompte">Num Compte</span></dt>
+        <dd>
+            <span>{{ribTiers.numCompte}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.ribTiers.cleRib">Cle Rib</span></dt>
+        <dd>
+            <span>{{ribTiers.cleRib}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.ribTiers.iban">Iban</span></dt>
+        <dd>
+            <span>{{ribTiers.iban}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.ribTiers.bic">Bic</span></dt>
+        <dd>
+            <span>{{ribTiers.bic}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.ribTiers.libelle">Libelle</span></dt>
+        <dd>
+            <span>{{ribTiers.libelle}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.ribTiers.civilite">Civilite</span></dt>
+        <dd>
+            <span jhiTranslate="{{'sergicApp.Civilite.' + ribTiers.civilite}}">{{ribTiers.civilite}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.ribTiers.titulaireDuCompte">Titulaire Du Compte</span></dt>
+        <dd>
+            <span>{{ribTiers.titulaireDuCompte}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.ribTiers.numInterneMaya">Num Interne Maya</span></dt>
+        <dd>
+            <span>{{ribTiers.numInterneMaya}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'rib-tiers/'+ ribTiers.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

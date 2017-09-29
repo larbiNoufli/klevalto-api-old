@@ -1,0 +1,71 @@
+
+<div *ngIf="assocMandatBien">
+    <h2><span jhiTranslate="sergicApp.assocMandatBien.detail.title">Assoc Mandat Bien</span> {{assocMandatBien.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="sergicApp.assocMandatBien.isActif">Is Actif</span></dt>
+        <dd>
+            <span>{{assocMandatBien.isActif}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.assocMandatBien.datedebutjuridique">Datedebutjuridique</span></dt>
+        <dd>
+            <span>{{assocMandatBien.datedebutjuridique | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.assocMandatBien.datefinjuridique">Datefinjuridique</span></dt>
+        <dd>
+            <span>{{assocMandatBien.datefinjuridique | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.assocMandatBien.isValidated">Is Validated</span></dt>
+        <dd>
+            <span>{{assocMandatBien.isValidated}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.assocMandatBien.validationDate">Validation Date</span></dt>
+        <dd>
+            <span>{{assocMandatBien.validationDate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.assocMandatBien.isRejected">Is Rejected</span></dt>
+        <dd>
+            <span>{{assocMandatBien.isRejected}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.assocMandatBien.refusalDate">Refusal Date</span></dt>
+        <dd>
+            <span>{{assocMandatBien.refusalDate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.assocMandatBien.valeurAchatDuBien">Valeur Achat Du Bien</span></dt>
+        <dd>
+            <span>{{assocMandatBien.valeurAchatDuBien}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.assocMandatBien.tiers">Tiers</span></dt>
+        <dd>
+            <div *ngIf="assocMandatBien.tiers">
+                <a [routerLink]="['/tiers', assocMandatBien.tiers?.id]">{{assocMandatBien.tiers?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.assocMandatBien.mandat">Mandat</span></dt>
+        <dd>
+            <div *ngIf="assocMandatBien.mandat">
+                <a [routerLink]="['/mandat', assocMandatBien.mandat?.id]">{{assocMandatBien.mandat?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.assocMandatBien.bien">Bien</span></dt>
+        <dd>
+            <div *ngIf="assocMandatBien.bien">
+                <a [routerLink]="['/bien', assocMandatBien.bien?.id]">{{assocMandatBien.bien?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'assoc-mandat-bien/'+ assocMandatBien.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

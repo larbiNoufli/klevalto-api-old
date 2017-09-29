@@ -1,0 +1,31 @@
+{
+    "sergicApp": {
+        "assocBailBien" : {
+            "home": {
+                "title": "AssocBailBiens",
+                "createLabel": "Créer un nouveau Assoc Bail Bien",
+                "createOrEditLabel": "Créer ou éditer un Assoc Bail Bien"
+            },
+            "created": "Un nouveau Assoc Bail Bien a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Assoc Bail Bien avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Assoc Bail Bien avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Assoc Bail Bien {{ id }} ?"
+            },
+            "detail": {
+                "title": "Assoc Bail Bien"
+            },
+            "isActif": "Is Actif",
+            "datedebutjuridique": "Datedebutjuridique",
+            "datefinjuridique": "Datefinjuridique",
+            "isValidated": "Is Validated",
+            "validationDate": "Validation Date",
+            "isRejected": "Is Rejected",
+            "refusalDate": "Refusal Date",
+            "valeurAchatDuBien": "Valeur Achat Du Bien",
+            "tiers": "Tiers",
+            "bail": "Bail",
+            "bien": "Bien"
+        }
+    }
+}

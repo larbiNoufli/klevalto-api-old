@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity AssocBailBien.
+    -->
+    <changeSet id="20170921181108-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="tiers_id"
+                                 baseTableName="assoc_bail_bien"
+                                 constraintName="fk_assoc_bail_bien_tiers_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tiers"/>
+
+        <addForeignKeyConstraint baseColumnNames="bail_id"
+                                 baseTableName="assoc_bail_bien"
+                                 constraintName="fk_assoc_bail_bien_bail_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="bail"/>
+
+        <addForeignKeyConstraint baseColumnNames="bien_id"
+                                 baseTableName="assoc_bail_bien"
+                                 constraintName="fk_assoc_bail_bien_bien_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="bien"/>
+
+    </changeSet>
+</databaseChangeLog>

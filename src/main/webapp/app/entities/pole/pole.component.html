@@ -1,0 +1,78 @@
+<div>
+    <h2>
+        <span jhiTranslate="sergicApp.pole.home.title">Poles</span>
+        <button class="btn btn-primary float-right jh-create-entity create-pole" [routerLink]="['/', { outlets: { popup: ['pole-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="sergicApp.pole.home.createLabel">
+            Create new Pole
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="poles">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="sergicApp.pole.codePole">Code Pole</span></th>
+            <th><span jhiTranslate="sergicApp.pole.libelle">Libelle</span></th>
+            <th><span jhiTranslate="sergicApp.pole.adresseVolet1">Adresse Volet 1</span></th>
+            <th><span jhiTranslate="sergicApp.pole.adresseVolet2">Adresse Volet 2</span></th>
+            <th><span jhiTranslate="sergicApp.pole.adresseVolet3">Adresse Volet 3</span></th>
+            <th><span jhiTranslate="sergicApp.pole.adresseVolet4">Adresse Volet 4</span></th>
+            <th><span jhiTranslate="sergicApp.pole.adresseVolet5">Adresse Volet 5</span></th>
+            <th><span jhiTranslate="sergicApp.pole.adresseVolet6">Adresse Volet 6</span></th>
+            <th><span jhiTranslate="sergicApp.pole.adresseVolet7">Adresse Volet 7</span></th>
+            <th><span jhiTranslate="sergicApp.pole.codePostal">Code Postal</span></th>
+            <th><span jhiTranslate="sergicApp.pole.descriptif">Descriptif</span></th>
+            <th><span jhiTranslate="sergicApp.pole.ville">Ville</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let pole of poles ;trackBy: trackId">
+                <td><a [routerLink]="['../pole', pole.id ]">{{pole.id}}</a></td>
+                <td>{{pole.codePole}}</td>
+                <td>{{pole.libelle}}</td>
+                <td>{{pole.adresseVolet1}}</td>
+                <td>{{pole.adresseVolet2}}</td>
+                <td>{{pole.adresseVolet3}}</td>
+                <td>{{pole.adresseVolet4}}</td>
+                <td>{{pole.adresseVolet5}}</td>
+                <td>{{pole.adresseVolet6}}</td>
+                <td>{{pole.adresseVolet7}}</td>
+                <td>{{pole.codePostal}}</td>
+                <td>{{pole.descriptif}}</td>
+                <td>{{pole.ville}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../pole', pole.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'pole/'+ pole.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'pole/'+ pole.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

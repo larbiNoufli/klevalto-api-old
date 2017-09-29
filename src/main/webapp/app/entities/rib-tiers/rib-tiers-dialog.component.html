@@ -1,0 +1,82 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myRibTiersLabel" jhiTranslate="sergicApp.ribTiers.home.createOrEditLabel">Create or edit a Rib Tiers</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!ribTiers.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="ribTiers.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.ribTiers.domiciliation" for="field_domiciliation">Domiciliation</label>
+            <input type="text" class="form-control" name="domiciliation" id="field_domiciliation"
+                [(ngModel)]="ribTiers.domiciliation"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.ribTiers.codeBanque" for="field_codeBanque">Code Banque</label>
+            <input type="number" class="form-control" name="codeBanque" id="field_codeBanque"
+                [(ngModel)]="ribTiers.codeBanque"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.ribTiers.codeGuichet" for="field_codeGuichet">Code Guichet</label>
+            <input type="number" class="form-control" name="codeGuichet" id="field_codeGuichet"
+                [(ngModel)]="ribTiers.codeGuichet"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.ribTiers.numCompte" for="field_numCompte">Num Compte</label>
+            <input type="text" class="form-control" name="numCompte" id="field_numCompte"
+                [(ngModel)]="ribTiers.numCompte"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.ribTiers.cleRib" for="field_cleRib">Cle Rib</label>
+            <input type="text" class="form-control" name="cleRib" id="field_cleRib"
+                [(ngModel)]="ribTiers.cleRib"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.ribTiers.iban" for="field_iban">Iban</label>
+            <input type="text" class="form-control" name="iban" id="field_iban"
+                [(ngModel)]="ribTiers.iban"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.ribTiers.bic" for="field_bic">Bic</label>
+            <input type="text" class="form-control" name="bic" id="field_bic"
+                [(ngModel)]="ribTiers.bic"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.ribTiers.libelle" for="field_libelle">Libelle</label>
+            <input type="text" class="form-control" name="libelle" id="field_libelle"
+                [(ngModel)]="ribTiers.libelle"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.ribTiers.civilite" for="field_civilite">Civilite</label>
+            <select class="form-control" name="civilite" [(ngModel)]="ribTiers.civilite" id="field_civilite" >
+                <option value="M">{{'sergicApp.Civilite.M' | translate}}</option>
+                <option value="MME">{{'sergicApp.Civilite.MME' | translate}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.ribTiers.titulaireDuCompte" for="field_titulaireDuCompte">Titulaire Du Compte</label>
+            <input type="text" class="form-control" name="titulaireDuCompte" id="field_titulaireDuCompte"
+                [(ngModel)]="ribTiers.titulaireDuCompte"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.ribTiers.numInterneMaya" for="field_numInterneMaya">Num Interne Maya</label>
+            <input type="number" class="form-control" name="numInterneMaya" id="field_numInterneMaya"
+                [(ngModel)]="ribTiers.numInterneMaya"  />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

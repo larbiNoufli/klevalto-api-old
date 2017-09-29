@@ -1,0 +1,144 @@
+<div>
+    <h2>
+        <span jhiTranslate="sergicApp.tiers.home.title">Tiers</span>
+        <button class="btn btn-primary float-right jh-create-entity create-tiers" [routerLink]="['/', { outlets: { popup: ['tiers-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="sergicApp.tiers.home.createLabel">
+            Create new Tiers
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="tiers">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.adresseMail">Adresse Mail</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.noMail">No Mail</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.motDePasse">Mot De Passe</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.identifiantCompteTiers">Identifiant Compte Tiers</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.civilite">Civilite</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.nom">Nom</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.prenom">Prenom</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.telephoneMobile">Telephone Mobile</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.telephoneFixe">Telephone Fixe</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.isProspectLocataire">Is Prospect Locataire</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.isLocataire">Is Locataire</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.isBailleur">Is Bailleur</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.isBailleurRecherche">Is Bailleur Recherche</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.isPersonnelSergic">Is Personnel Sergic</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.isAdministrateur">Is Administrateur</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.isAcquereur">Is Acquereur</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.isCoproprietaire">Is Coproprietaire</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.isProprietaire">Is Proprietaire</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.isAutreActeur">Is Autre Acteur</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.isProprietaireLocationSaisonniere">Is Proprietaire Location Saisonniere</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.isIntervenant">Is Intervenant</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.regimeMatrimonial">Regime Matrimonial</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.employeur">Employeur</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.profession">Profession</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.dateEmbauche">Date Embauche</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.revenuMensuel">Revenu Mensuel</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.nombreMoisDeRevenu">Nombre Mois De Revenu</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.dateDeNaissance">Date De Naissance</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.lieuDeNaissance">Lieu De Naissance</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.nationalite">Nationalite</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.isSeparated">Is Separated</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.dateDeMariage">Date De Mariage</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.lieuDeMariage">Lieu De Mariage</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.commentaires">Commentaires</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.smsAccepted">Sms Accepted</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.adressePostaleNPAI">Adresse Postale NPAI</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.adressePostale">Adresse Postale</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.profil">Profil</span></th>
+            <th><span jhiTranslate="sergicApp.tiers.utilisationRibTiers">Utilisation Rib Tiers</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let tiers of tiers ;trackBy: trackId">
+                <td><a [routerLink]="['../tiers', tiers.id ]">{{tiers.id}}</a></td>
+                <td>{{tiers.adresseMail}}</td>
+                <td>{{tiers.noMail}}</td>
+                <td>{{tiers.motDePasse}}</td>
+                <td>{{tiers.identifiantCompteTiers}}</td>
+                <td jhiTranslate="{{'sergicApp.Civilite.' + tiers.civilite}}">{{tiers.civilite}}</td>
+                <td>{{tiers.nom}}</td>
+                <td>{{tiers.prenom}}</td>
+                <td>{{tiers.telephoneMobile}}</td>
+                <td>{{tiers.telephoneFixe}}</td>
+                <td>{{tiers.isProspectLocataire}}</td>
+                <td>{{tiers.isLocataire}}</td>
+                <td>{{tiers.isBailleur}}</td>
+                <td>{{tiers.isBailleurRecherche}}</td>
+                <td>{{tiers.isPersonnelSergic}}</td>
+                <td>{{tiers.isAdministrateur}}</td>
+                <td>{{tiers.isAcquereur}}</td>
+                <td>{{tiers.isCoproprietaire}}</td>
+                <td>{{tiers.isProprietaire}}</td>
+                <td>{{tiers.isAutreActeur}}</td>
+                <td>{{tiers.isProprietaireLocationSaisonniere}}</td>
+                <td>{{tiers.isIntervenant}}</td>
+                <td jhiTranslate="{{'sergicApp.RegimeMatrimonial.' + tiers.regimeMatrimonial}}">{{tiers.regimeMatrimonial}}</td>
+                <td>{{tiers.employeur}}</td>
+                <td>{{tiers.profession}}</td>
+                <td>{{tiers.dateEmbauche | date:'medium'}}</td>
+                <td>{{tiers.revenuMensuel}}</td>
+                <td>{{tiers.nombreMoisDeRevenu}}</td>
+                <td>{{tiers.dateDeNaissance | date:'medium'}}</td>
+                <td>{{tiers.lieuDeNaissance}}</td>
+                <td>{{tiers.nationalite}}</td>
+                <td>{{tiers.isSeparated}}</td>
+                <td>{{tiers.dateDeMariage | date:'medium'}}</td>
+                <td>{{tiers.lieuDeMariage}}</td>
+                <td>{{tiers.commentaires}}</td>
+                <td>{{tiers.smsAccepted}}</td>
+                <td>{{tiers.adressePostaleNPAI}}</td>
+                <td>
+                    <div *ngIf="tiers.adressePostale">
+                        <a [routerLink]="['../adresse-postale', tiers.adressePostale?.id ]" >{{tiers.adressePostale?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="tiers.profil">
+                        <a [routerLink]="['../profil', tiers.profil?.id ]" >{{tiers.profil?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="tiers.utilisationRibTiers">
+                        <a [routerLink]="['../utilisation-rib-tiers', tiers.utilisationRibTiers?.id ]" >{{tiers.utilisationRibTiers?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../tiers', tiers.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'tiers/'+ tiers.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'tiers/'+ tiers.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

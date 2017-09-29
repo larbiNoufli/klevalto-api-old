@@ -1,0 +1,25 @@
+{
+    "sergicApp": {
+        "prelevement" : {
+            "home": {
+                "title": "Prelevements",
+                "createLabel": "Créer un nouveau Prelevement",
+                "createOrEditLabel": "Créer ou éditer un Prelevement"
+            },
+            "created": "Un nouveau Prelevement a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Prelevement avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Prelevement avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Prelevement {{ id }} ?"
+            },
+            "detail": {
+                "title": "Prelevement"
+            },
+            "montantAPrelever": "Montant A Prelever",
+            "numeroOrdre": "Numero Ordre",
+            "dateDuPrelevement": "Date Du Prelevement",
+            "isRecurrent": "Is Recurrent",
+            "dateDetransfertVersMaya": "Date Detransfert Vers Maya"
+        }
+    }
+}

@@ -1,0 +1,34 @@
+{
+    "sergicApp": {
+        "typeBien" : {
+            "home": {
+                "title": "TypeBiens",
+                "createLabel": "Créer un nouveau Type Bien",
+                "createOrEditLabel": "Créer ou éditer un Type Bien"
+            },
+            "created": "Un nouveau Type Bien a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Type Bien avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Type Bien avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Type Bien {{ id }} ?"
+            },
+            "detail": {
+                "title": "Type Bien"
+            },
+            "codeTypeLot": "Code Type Lot",
+            "libelle": "Libelle",
+            "libelleAnnonce": "Libelle Annonce",
+            "isHabitable": "Is Habitable",
+            "dureeVisiteLocation": "Duree Visite Location",
+            "dureeVisiteVente": "Duree Visite Vente",
+            "ordreAffichage": "Ordre Affichage",
+            "isTypeLotPrincipal": "Is Type Lot Principal",
+            "isLotSurfaceVariable": "Is Lot Surface Variable",
+            "habitationOuTertiaire": "Habitation Ou Tertiaire",
+            "nombrePieces": "Nombre Pieces",
+            "libelleCourt": "Libelle Court",
+            "nbrChambreObligatoireAnnonce": "Nbr Chambre Obligatoire Annonce",
+            "isUsedInKlevalto": "Is Used In Klevalto"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "sergicApp": {
+        "bien" : {
+            "home": {
+                "title": "Biens",
+                "createLabel": "Créer un nouveau Bien",
+                "createOrEditLabel": "Créer ou éditer un Bien"
+            },
+            "created": "Un nouveau Bien a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Bien avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Bien avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Bien {{ id }} ?"
+            },
+            "detail": {
+                "title": "Bien"
+            },
+            "referenceBien": "Reference Bien",
+            "codeBien": "Code Bien",
+            "dureeVisiteLocation": "Duree Visite Location",
+            "typeBien": "Type Bien",
+            "mandat": "Mandat",
+            "adressePostale": "Adresse Postale"
+        }
+    }
+}

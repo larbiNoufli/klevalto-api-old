@@ -1,0 +1,77 @@
+
+<div *ngIf="typeBien">
+    <h2><span jhiTranslate="sergicApp.typeBien.detail.title">Type Bien</span> {{typeBien.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="sergicApp.typeBien.codeTypeLot">Code Type Lot</span></dt>
+        <dd>
+            <span>{{typeBien.codeTypeLot}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.typeBien.libelle">Libelle</span></dt>
+        <dd>
+            <span>{{typeBien.libelle}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.typeBien.libelleAnnonce">Libelle Annonce</span></dt>
+        <dd>
+            <span>{{typeBien.libelleAnnonce}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.typeBien.isHabitable">Is Habitable</span></dt>
+        <dd>
+            <span>{{typeBien.isHabitable}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.typeBien.dureeVisiteLocation">Duree Visite Location</span></dt>
+        <dd>
+            <span>{{typeBien.dureeVisiteLocation}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.typeBien.dureeVisiteVente">Duree Visite Vente</span></dt>
+        <dd>
+            <span>{{typeBien.dureeVisiteVente}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.typeBien.ordreAffichage">Ordre Affichage</span></dt>
+        <dd>
+            <span>{{typeBien.ordreAffichage}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.typeBien.isTypeLotPrincipal">Is Type Lot Principal</span></dt>
+        <dd>
+            <span>{{typeBien.isTypeLotPrincipal}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.typeBien.isLotSurfaceVariable">Is Lot Surface Variable</span></dt>
+        <dd>
+            <span>{{typeBien.isLotSurfaceVariable}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.typeBien.habitationOuTertiaire">Habitation Ou Tertiaire</span></dt>
+        <dd>
+            <span>{{typeBien.habitationOuTertiaire}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.typeBien.nombrePieces">Nombre Pieces</span></dt>
+        <dd>
+            <span>{{typeBien.nombrePieces}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.typeBien.libelleCourt">Libelle Court</span></dt>
+        <dd>
+            <span>{{typeBien.libelleCourt}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.typeBien.nbrChambreObligatoireAnnonce">Nbr Chambre Obligatoire Annonce</span></dt>
+        <dd>
+            <span>{{typeBien.nbrChambreObligatoireAnnonce}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.typeBien.isUsedInKlevalto">Is Used In Klevalto</span></dt>
+        <dd>
+            <span>{{typeBien.isUsedInKlevalto}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'type-bien/'+ typeBien.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

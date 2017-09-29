@@ -1,0 +1,95 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myTypeBienLabel" jhiTranslate="sergicApp.typeBien.home.createOrEditLabel">Create or edit a Type Bien</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!typeBien.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="typeBien.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.typeBien.codeTypeLot" for="field_codeTypeLot">Code Type Lot</label>
+            <input type="text" class="form-control" name="codeTypeLot" id="field_codeTypeLot"
+                [(ngModel)]="typeBien.codeTypeLot"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.typeBien.libelle" for="field_libelle">Libelle</label>
+            <input type="text" class="form-control" name="libelle" id="field_libelle"
+                [(ngModel)]="typeBien.libelle"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.typeBien.libelleAnnonce" for="field_libelleAnnonce">Libelle Annonce</label>
+            <input type="text" class="form-control" name="libelleAnnonce" id="field_libelleAnnonce"
+                [(ngModel)]="typeBien.libelleAnnonce"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.typeBien.isHabitable" for="field_isHabitable">Is Habitable</label>
+            <input type="checkbox" class="form-control" name="isHabitable" id="field_isHabitable"
+                [(ngModel)]="typeBien.isHabitable"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.typeBien.dureeVisiteLocation" for="field_dureeVisiteLocation">Duree Visite Location</label>
+            <input type="number" class="form-control" name="dureeVisiteLocation" id="field_dureeVisiteLocation"
+                [(ngModel)]="typeBien.dureeVisiteLocation"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.typeBien.dureeVisiteVente" for="field_dureeVisiteVente">Duree Visite Vente</label>
+            <input type="number" class="form-control" name="dureeVisiteVente" id="field_dureeVisiteVente"
+                [(ngModel)]="typeBien.dureeVisiteVente"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.typeBien.ordreAffichage" for="field_ordreAffichage">Ordre Affichage</label>
+            <input type="number" class="form-control" name="ordreAffichage" id="field_ordreAffichage"
+                [(ngModel)]="typeBien.ordreAffichage"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.typeBien.isTypeLotPrincipal" for="field_isTypeLotPrincipal">Is Type Lot Principal</label>
+            <input type="number" class="form-control" name="isTypeLotPrincipal" id="field_isTypeLotPrincipal"
+                [(ngModel)]="typeBien.isTypeLotPrincipal"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.typeBien.isLotSurfaceVariable" for="field_isLotSurfaceVariable">Is Lot Surface Variable</label>
+            <input type="checkbox" class="form-control" name="isLotSurfaceVariable" id="field_isLotSurfaceVariable"
+                [(ngModel)]="typeBien.isLotSurfaceVariable"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.typeBien.habitationOuTertiaire" for="field_habitationOuTertiaire">Habitation Ou Tertiaire</label>
+            <input type="text" class="form-control" name="habitationOuTertiaire" id="field_habitationOuTertiaire"
+                [(ngModel)]="typeBien.habitationOuTertiaire"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.typeBien.nombrePieces" for="field_nombrePieces">Nombre Pieces</label>
+            <input type="number" class="form-control" name="nombrePieces" id="field_nombrePieces"
+                [(ngModel)]="typeBien.nombrePieces"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.typeBien.libelleCourt" for="field_libelleCourt">Libelle Court</label>
+            <input type="text" class="form-control" name="libelleCourt" id="field_libelleCourt"
+                [(ngModel)]="typeBien.libelleCourt"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.typeBien.nbrChambreObligatoireAnnonce" for="field_nbrChambreObligatoireAnnonce">Nbr Chambre Obligatoire Annonce</label>
+            <input type="checkbox" class="form-control" name="nbrChambreObligatoireAnnonce" id="field_nbrChambreObligatoireAnnonce"
+                [(ngModel)]="typeBien.nbrChambreObligatoireAnnonce"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.typeBien.isUsedInKlevalto" for="field_isUsedInKlevalto">Is Used In Klevalto</label>
+            <input type="checkbox" class="form-control" name="isUsedInKlevalto" id="field_isUsedInKlevalto"
+                [(ngModel)]="typeBien.isUsedInKlevalto"  />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,28 @@
+{
+    "sergicApp": {
+        "mandat" : {
+            "home": {
+                "title": "Mandats",
+                "createLabel": "Créer un nouveau Mandat",
+                "createOrEditLabel": "Créer ou éditer un Mandat"
+            },
+            "created": "Un nouveau Mandat a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Mandat avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Mandat avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Mandat {{ id }} ?"
+            },
+            "detail": {
+                "title": "Mandat"
+            },
+            "isActif": "Is Actif",
+            "datedebutjuridique": "Datedebutjuridique",
+            "datefinjuridique": "Datefinjuridique",
+            "isValidated": "Is Validated",
+            "validationDate": "Validation Date",
+            "isRejected": "Is Rejected",
+            "refusalDate": "Refusal Date",
+            "valeurAchatDuBien": "Valeur Achat Du Bien"
+        }
+    }
+}

@@ -1,0 +1,59 @@
+{
+    "sergicApp": {
+        "tiers" : {
+            "home": {
+                "title": "Tiers",
+                "createLabel": "Créer un nouveau Tiers",
+                "createOrEditLabel": "Créer ou éditer un Tiers"
+            },
+            "created": "Un nouveau Tiers a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Tiers avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Tiers avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Tiers {{ id }} ?"
+            },
+            "detail": {
+                "title": "Tiers"
+            },
+            "adresseMail": "Adresse Mail",
+            "noMail": "No Mail",
+            "motDePasse": "Mot De Passe",
+            "identifiantCompteTiers": "Identifiant Compte Tiers",
+            "civilite": "Civilite",
+            "nom": "Nom",
+            "prenom": "Prenom",
+            "telephoneMobile": "Telephone Mobile",
+            "telephoneFixe": "Telephone Fixe",
+            "isProspectLocataire": "Is Prospect Locataire",
+            "isLocataire": "Is Locataire",
+            "isBailleur": "Is Bailleur",
+            "isBailleurRecherche": "Is Bailleur Recherche",
+            "isPersonnelSergic": "Is Personnel Sergic",
+            "isAdministrateur": "Is Administrateur",
+            "isAcquereur": "Is Acquereur",
+            "isCoproprietaire": "Is Coproprietaire",
+            "isProprietaire": "Is Proprietaire",
+            "isAutreActeur": "Is Autre Acteur",
+            "isProprietaireLocationSaisonniere": "Is Proprietaire Location Saisonniere",
+            "isIntervenant": "Is Intervenant",
+            "regimeMatrimonial": "Regime Matrimonial",
+            "employeur": "Employeur",
+            "profession": "Profession",
+            "dateEmbauche": "Date Embauche",
+            "revenuMensuel": "Revenu Mensuel",
+            "nombreMoisDeRevenu": "Nombre Mois De Revenu",
+            "dateDeNaissance": "Date De Naissance",
+            "lieuDeNaissance": "Lieu De Naissance",
+            "nationalite": "Nationalite",
+            "isSeparated": "Is Separated",
+            "dateDeMariage": "Date De Mariage",
+            "lieuDeMariage": "Lieu De Mariage",
+            "commentaires": "Commentaires",
+            "smsAccepted": "Sms Accepted",
+            "adressePostaleNPAI": "Adresse Postale NPAI",
+            "adressePostale": "Adresse Postale",
+            "profil": "Profil",
+            "utilisationRibTiers": "Utilisation Rib Tiers"
+        }
+    }
+}

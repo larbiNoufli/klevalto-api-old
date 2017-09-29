@@ -1,0 +1,23 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "dateCreation",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "statutSignatureBailleur",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dateDetransfertVersMaya",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170921142250",
+    "entityTableName": "bail",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

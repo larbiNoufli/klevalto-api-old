@@ -1,0 +1,31 @@
+{
+    "sergicApp": {
+        "ribTiers" : {
+            "home": {
+                "title": "RibTiers",
+                "createLabel": "Créer un nouveau Rib Tiers",
+                "createOrEditLabel": "Créer ou éditer un Rib Tiers"
+            },
+            "created": "Un nouveau Rib Tiers a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Rib Tiers avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Rib Tiers avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Rib Tiers {{ id }} ?"
+            },
+            "detail": {
+                "title": "Rib Tiers"
+            },
+            "domiciliation": "Domiciliation",
+            "codeBanque": "Code Banque",
+            "codeGuichet": "Code Guichet",
+            "numCompte": "Num Compte",
+            "cleRib": "Cle Rib",
+            "iban": "Iban",
+            "bic": "Bic",
+            "libelle": "Libelle",
+            "civilite": "Civilite",
+            "titulaireDuCompte": "Titulaire Du Compte",
+            "numInterneMaya": "Num Interne Maya"
+        }
+    }
+}

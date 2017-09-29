@@ -1,0 +1,67 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "codeTypeLot",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "libelle",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "libelleAnnonce",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isHabitable",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "dureeVisiteLocation",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "dureeVisiteVente",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "ordreAffichage",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "isTypeLotPrincipal",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "isLotSurfaceVariable",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "habitationOuTertiaire",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nombrePieces",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "libelleCourt",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nbrChambreObligatoireAnnonce",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "isUsedInKlevalto",
+            "fieldType": "Boolean"
+        }
+    ],
+    "changelogDate": "20170921142252",
+    "entityTableName": "type_bien",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

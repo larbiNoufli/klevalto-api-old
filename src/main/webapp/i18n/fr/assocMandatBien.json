@@ -1,0 +1,31 @@
+{
+    "sergicApp": {
+        "assocMandatBien" : {
+            "home": {
+                "title": "AssocMandatBiens",
+                "createLabel": "Créer un nouveau Assoc Mandat Bien",
+                "createOrEditLabel": "Créer ou éditer un Assoc Mandat Bien"
+            },
+            "created": "Un nouveau Assoc Mandat Bien a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Assoc Mandat Bien avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Assoc Mandat Bien avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Assoc Mandat Bien {{ id }} ?"
+            },
+            "detail": {
+                "title": "Assoc Mandat Bien"
+            },
+            "isActif": "Is Actif",
+            "datedebutjuridique": "Datedebutjuridique",
+            "datefinjuridique": "Datefinjuridique",
+            "isValidated": "Is Validated",
+            "validationDate": "Validation Date",
+            "isRejected": "Is Rejected",
+            "refusalDate": "Refusal Date",
+            "valeurAchatDuBien": "Valeur Achat Du Bien",
+            "tiers": "Tiers",
+            "mandat": "Mandat",
+            "bien": "Bien"
+        }
+    }
+}

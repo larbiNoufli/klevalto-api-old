@@ -1,0 +1,32 @@
+{
+    "sergicApp": {
+        "profil" : {
+            "home": {
+                "title": "Profils",
+                "createLabel": "Créer un nouveau Profil",
+                "createOrEditLabel": "Créer ou éditer un Profil"
+            },
+            "created": "Un nouveau Profil a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Profil avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Profil avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Profil {{ id }} ?"
+            },
+            "detail": {
+                "title": "Profil"
+            },
+            "isActif": "Is Actif",
+            "identifiantProspectLocataire": "Identifiant Prospect Locataire",
+            "identifiantLocataire": "Identifiant Locataire",
+            "identifiantBailleur": "Identifiant Bailleur",
+            "identifiantBailleurRecherche": "Identifiant Bailleur Recherche",
+            "identifiantPersonnelSergic": "Identifiant Personnel Sergic",
+            "identifiantCoproprietaire": "Identifiant Coproprietaire",
+            "identifiantProprietaireLocationSaisonniere": "Identifiant Proprietaire Location Saisonniere",
+            "identifiantIntervenant": "Identifiant Intervenant",
+            "profil": "Profil",
+            "role": "Role",
+            "bien": "Bien"
+        }
+    }
+}

@@ -1,0 +1,44 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myBailLabel" jhiTranslate="sergicApp.bail.home.createOrEditLabel">Create or edit a Bail</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!bail.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="bail.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.bail.dateCreation" for="field_dateCreation">Date Creation</label>
+            <div class="d-flex">
+                <input id="field_dateCreation" type="datetime-local" class="form-control" name="dateCreation" [(ngModel)]="bail.dateCreation"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.bail.statutSignatureBailleur" for="field_statutSignatureBailleur">Statut Signature Bailleur</label>
+            <input type="text" class="form-control" name="statutSignatureBailleur" id="field_statutSignatureBailleur"
+                [(ngModel)]="bail.statutSignatureBailleur"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.bail.dateDetransfertVersMaya" for="field_dateDetransfertVersMaya">Date Detransfert Vers Maya</label>
+            <div class="d-flex">
+                <input id="field_dateDetransfertVersMaya" type="datetime-local" class="form-control" name="dateDetransfertVersMaya" [(ngModel)]="bail.dateDetransfertVersMaya"
+                  />
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

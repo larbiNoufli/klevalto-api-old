@@ -1,0 +1,85 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myPoleLabel" jhiTranslate="sergicApp.pole.home.createOrEditLabel">Create or edit a Pole</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!pole.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="pole.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.pole.codePole" for="field_codePole">Code Pole</label>
+            <input type="text" class="form-control" name="codePole" id="field_codePole"
+                [(ngModel)]="pole.codePole"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.pole.libelle" for="field_libelle">Libelle</label>
+            <input type="text" class="form-control" name="libelle" id="field_libelle"
+                [(ngModel)]="pole.libelle"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.pole.adresseVolet1" for="field_adresseVolet1">Adresse Volet 1</label>
+            <input type="text" class="form-control" name="adresseVolet1" id="field_adresseVolet1"
+                [(ngModel)]="pole.adresseVolet1"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.pole.adresseVolet2" for="field_adresseVolet2">Adresse Volet 2</label>
+            <input type="text" class="form-control" name="adresseVolet2" id="field_adresseVolet2"
+                [(ngModel)]="pole.adresseVolet2"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.pole.adresseVolet3" for="field_adresseVolet3">Adresse Volet 3</label>
+            <input type="text" class="form-control" name="adresseVolet3" id="field_adresseVolet3"
+                [(ngModel)]="pole.adresseVolet3"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.pole.adresseVolet4" for="field_adresseVolet4">Adresse Volet 4</label>
+            <input type="text" class="form-control" name="adresseVolet4" id="field_adresseVolet4"
+                [(ngModel)]="pole.adresseVolet4"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.pole.adresseVolet5" for="field_adresseVolet5">Adresse Volet 5</label>
+            <input type="text" class="form-control" name="adresseVolet5" id="field_adresseVolet5"
+                [(ngModel)]="pole.adresseVolet5"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.pole.adresseVolet6" for="field_adresseVolet6">Adresse Volet 6</label>
+            <input type="text" class="form-control" name="adresseVolet6" id="field_adresseVolet6"
+                [(ngModel)]="pole.adresseVolet6"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.pole.adresseVolet7" for="field_adresseVolet7">Adresse Volet 7</label>
+            <input type="text" class="form-control" name="adresseVolet7" id="field_adresseVolet7"
+                [(ngModel)]="pole.adresseVolet7"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.pole.codePostal" for="field_codePostal">Code Postal</label>
+            <input type="text" class="form-control" name="codePostal" id="field_codePostal"
+                [(ngModel)]="pole.codePostal"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.pole.descriptif" for="field_descriptif">Descriptif</label>
+            <input type="text" class="form-control" name="descriptif" id="field_descriptif"
+                [(ngModel)]="pole.descriptif"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.pole.ville" for="field_ville">Ville</label>
+            <input type="text" class="form-control" name="ville" id="field_ville"
+                [(ngModel)]="pole.ville"  />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

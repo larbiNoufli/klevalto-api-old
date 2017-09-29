@@ -1,0 +1,71 @@
+
+<div *ngIf="assocBailBien">
+    <h2><span jhiTranslate="sergicApp.assocBailBien.detail.title">Assoc Bail Bien</span> {{assocBailBien.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="sergicApp.assocBailBien.isActif">Is Actif</span></dt>
+        <dd>
+            <span>{{assocBailBien.isActif}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.assocBailBien.datedebutjuridique">Datedebutjuridique</span></dt>
+        <dd>
+            <span>{{assocBailBien.datedebutjuridique | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.assocBailBien.datefinjuridique">Datefinjuridique</span></dt>
+        <dd>
+            <span>{{assocBailBien.datefinjuridique | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.assocBailBien.isValidated">Is Validated</span></dt>
+        <dd>
+            <span>{{assocBailBien.isValidated}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.assocBailBien.validationDate">Validation Date</span></dt>
+        <dd>
+            <span>{{assocBailBien.validationDate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.assocBailBien.isRejected">Is Rejected</span></dt>
+        <dd>
+            <span>{{assocBailBien.isRejected}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.assocBailBien.refusalDate">Refusal Date</span></dt>
+        <dd>
+            <span>{{assocBailBien.refusalDate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.assocBailBien.valeurAchatDuBien">Valeur Achat Du Bien</span></dt>
+        <dd>
+            <span>{{assocBailBien.valeurAchatDuBien}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.assocBailBien.tiers">Tiers</span></dt>
+        <dd>
+            <div *ngIf="assocBailBien.tiers">
+                <a [routerLink]="['/tiers', assocBailBien.tiers?.id]">{{assocBailBien.tiers?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.assocBailBien.bail">Bail</span></dt>
+        <dd>
+            <div *ngIf="assocBailBien.bail">
+                <a [routerLink]="['/bail', assocBailBien.bail?.id]">{{assocBailBien.bail?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.assocBailBien.bien">Bien</span></dt>
+        <dd>
+            <div *ngIf="assocBailBien.bien">
+                <a [routerLink]="['/bien', assocBailBien.bien?.id]">{{assocBailBien.bien?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'assoc-bail-bien/'+ assocBailBien.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

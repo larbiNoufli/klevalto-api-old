@@ -1,0 +1,90 @@
+<div>
+    <h2>
+        <span jhiTranslate="sergicApp.profil.home.title">Profils</span>
+        <button class="btn btn-primary float-right jh-create-entity create-profil" [routerLink]="['/', { outlets: { popup: ['profil-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="sergicApp.profil.home.createLabel">
+            Create new Profil
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="profils">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="sergicApp.profil.isActif">Is Actif</span></th>
+            <th><span jhiTranslate="sergicApp.profil.identifiantProspectLocataire">Identifiant Prospect Locataire</span></th>
+            <th><span jhiTranslate="sergicApp.profil.identifiantLocataire">Identifiant Locataire</span></th>
+            <th><span jhiTranslate="sergicApp.profil.identifiantBailleur">Identifiant Bailleur</span></th>
+            <th><span jhiTranslate="sergicApp.profil.identifiantBailleurRecherche">Identifiant Bailleur Recherche</span></th>
+            <th><span jhiTranslate="sergicApp.profil.identifiantPersonnelSergic">Identifiant Personnel Sergic</span></th>
+            <th><span jhiTranslate="sergicApp.profil.identifiantCoproprietaire">Identifiant Coproprietaire</span></th>
+            <th><span jhiTranslate="sergicApp.profil.identifiantProprietaireLocationSaisonniere">Identifiant Proprietaire Location Saisonniere</span></th>
+            <th><span jhiTranslate="sergicApp.profil.identifiantIntervenant">Identifiant Intervenant</span></th>
+            <th><span jhiTranslate="sergicApp.profil.profil">Profil</span></th>
+            <th><span jhiTranslate="sergicApp.profil.role">Role</span></th>
+            <th><span jhiTranslate="sergicApp.profil.bien">Bien</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let profil of profils ;trackBy: trackId">
+                <td><a [routerLink]="['../profil', profil.id ]">{{profil.id}}</a></td>
+                <td>{{profil.isActif}}</td>
+                <td>{{profil.identifiantProspectLocataire}}</td>
+                <td>{{profil.identifiantLocataire}}</td>
+                <td>{{profil.identifiantBailleur}}</td>
+                <td>{{profil.identifiantBailleurRecherche}}</td>
+                <td>{{profil.identifiantPersonnelSergic}}</td>
+                <td>{{profil.identifiantCoproprietaire}}</td>
+                <td>{{profil.identifiantProprietaireLocationSaisonniere}}</td>
+                <td>{{profil.identifiantIntervenant}}</td>
+                <td>
+                    <div *ngIf="profil.profil">
+                        <a [routerLink]="['../pole', profil.profil?.id ]" >{{profil.profil?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="profil.role">
+                        <a [routerLink]="['../role', profil.role?.id ]" >{{profil.role?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="profil.bien">
+                        <a [routerLink]="['../bien', profil.bien?.id ]" >{{profil.bien?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../profil', profil.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'profil/'+ profil.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'profil/'+ profil.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

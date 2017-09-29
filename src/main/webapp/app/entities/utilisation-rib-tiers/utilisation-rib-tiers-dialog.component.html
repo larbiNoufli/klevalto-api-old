@@ -1,0 +1,61 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myUtilisationRibTiersLabel" jhiTranslate="sergicApp.utilisationRibTiers.home.createOrEditLabel">Create or edit a Utilisation Rib Tiers</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!utilisationRibTiers.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="utilisationRibTiers.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.utilisationRibTiers.identifiantMaya" for="field_identifiantMaya">Identifiant Maya</label>
+            <input type="text" class="form-control" name="identifiantMaya" id="field_identifiantMaya"
+                [(ngModel)]="utilisationRibTiers.identifiantMaya"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.utilisationRibTiers.jourPrelevement" for="field_jourPrelevement">Jour Prelevement</label>
+            <div class="d-flex">
+                <input id="field_jourPrelevement" type="datetime-local" class="form-control" name="jourPrelevement" [(ngModel)]="utilisationRibTiers.jourPrelevement"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.utilisationRibTiers.numNationalEmetteur" for="field_numNationalEmetteur">Num National Emetteur</label>
+            <input type="text" class="form-control" name="numNationalEmetteur" id="field_numNationalEmetteur"
+                [(ngModel)]="utilisationRibTiers.numNationalEmetteur"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.utilisationRibTiers.numeroOrdre" for="field_numeroOrdre">Numero Ordre</label>
+            <input type="number" class="form-control" name="numeroOrdre" id="field_numeroOrdre"
+                [(ngModel)]="utilisationRibTiers.numeroOrdre"  />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.utilisationRibTiers.prelevement" for="field_prelevement">Prelevement</label>
+            <select class="form-control" id="field_prelevement" name="prelevement" [(ngModel)]="utilisationRibTiers.prelevement" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="prelevementOption.id === utilisationRibTiers.prelevement?.id ? utilisationRibTiers.prelevement : prelevementOption" *ngFor="let prelevementOption of prelevements; trackBy: trackPrelevementById">{{prelevementOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.utilisationRibTiers.ribTiers" for="field_ribTiers">Rib Tiers</label>
+            <select class="form-control" id="field_ribTiers" name="ribTiers" [(ngModel)]="utilisationRibTiers.ribTiers" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="ribTiersOption.id === utilisationRibTiers.ribTiers?.id ? utilisationRibTiers.ribTiers : ribTiersOption" *ngFor="let ribTiersOption of ribtiers; trackBy: trackRibTiersById">{{ribTiersOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

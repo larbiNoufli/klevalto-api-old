@@ -1,0 +1,41 @@
+
+<div *ngIf="prelevement">
+    <h2><span jhiTranslate="sergicApp.prelevement.detail.title">Prelevement</span> {{prelevement.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="sergicApp.prelevement.montantAPrelever">Montant A Prelever</span></dt>
+        <dd>
+            <span>{{prelevement.montantAPrelever}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.prelevement.numeroOrdre">Numero Ordre</span></dt>
+        <dd>
+            <span>{{prelevement.numeroOrdre}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.prelevement.dateDuPrelevement">Date Du Prelevement</span></dt>
+        <dd>
+            <span>{{prelevement.dateDuPrelevement | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.prelevement.isRecurrent">Is Recurrent</span></dt>
+        <dd>
+            <span>{{prelevement.isRecurrent}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.prelevement.dateDetransfertVersMaya">Date Detransfert Vers Maya</span></dt>
+        <dd>
+            <span>{{prelevement.dateDetransfertVersMaya | date:'medium'}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'prelevement/'+ prelevement.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

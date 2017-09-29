@@ -1,0 +1,68 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "profil",
+            "otherEntityName": "pole",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "profil"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "role",
+            "otherEntityName": "role",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "bien",
+            "otherEntityName": "bien",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "isActif",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "identifiantProspectLocataire",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "identifiantLocataire",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "identifiantBailleur",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "identifiantBailleurRecherche",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "identifiantPersonnelSergic",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "identifiantCoproprietaire",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "identifiantProprietaireLocationSaisonniere",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "identifiantIntervenant",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170921142247",
+    "entityTableName": "profil",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

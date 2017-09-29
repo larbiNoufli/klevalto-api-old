@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity Tiers.
+    -->
+    <changeSet id="20170921142244-1" author="jhipster">
+        <createTable tableName="tiers">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="adresse_mail" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="no_mail" type="boolean">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="mot_de_passe" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="identifiant_compte_tiers" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="civilite" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="nom" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="prenom" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="telephone_mobile" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="telephone_fixe" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="is_prospect_locataire" type="boolean">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="is_locataire" type="boolean">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="is_bailleur" type="boolean">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="is_bailleur_recherche" type="boolean">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="is_personnel_sergic" type="boolean">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="is_administrateur" type="boolean">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="is_acquereur" type="boolean">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="is_coproprietaire" type="boolean">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="is_proprietaire" type="boolean">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="is_autre_acteur" type="boolean">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="is_proprietaire_location_saisonniere" type="boolean">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="is_intervenant" type="boolean">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="regime_matrimonial" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="employeur" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="profession" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="date_embauche" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="revenu_mensuel" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="nombre_mois_de_revenu" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="date_de_naissance" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="lieu_de_naissance" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="nationalite" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="is_separated" type="boolean">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="date_de_mariage" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="lieu_de_mariage" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="commentaires" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="sms_accepted" type="boolean">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="adresse_postale_npai" type="boolean">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="adresse_postale_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="profil_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="utilisation_rib_tiers_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="tiers" columnName="date_embauche" columnDataType="datetime"/>
+        <dropDefaultValue tableName="tiers" columnName="date_de_naissance" columnDataType="datetime"/>
+        <dropDefaultValue tableName="tiers" columnName="date_de_mariage" columnDataType="datetime"/>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

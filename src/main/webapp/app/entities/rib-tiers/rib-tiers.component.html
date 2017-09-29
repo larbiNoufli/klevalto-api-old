@@ -1,0 +1,76 @@
+<div>
+    <h2>
+        <span jhiTranslate="sergicApp.ribTiers.home.title">Rib Tiers</span>
+        <button class="btn btn-primary float-right jh-create-entity create-rib-tiers" [routerLink]="['/', { outlets: { popup: ['rib-tiers-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="sergicApp.ribTiers.home.createLabel">
+            Create new Rib Tiers
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="ribTiers">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="sergicApp.ribTiers.domiciliation">Domiciliation</span></th>
+            <th><span jhiTranslate="sergicApp.ribTiers.codeBanque">Code Banque</span></th>
+            <th><span jhiTranslate="sergicApp.ribTiers.codeGuichet">Code Guichet</span></th>
+            <th><span jhiTranslate="sergicApp.ribTiers.numCompte">Num Compte</span></th>
+            <th><span jhiTranslate="sergicApp.ribTiers.cleRib">Cle Rib</span></th>
+            <th><span jhiTranslate="sergicApp.ribTiers.iban">Iban</span></th>
+            <th><span jhiTranslate="sergicApp.ribTiers.bic">Bic</span></th>
+            <th><span jhiTranslate="sergicApp.ribTiers.libelle">Libelle</span></th>
+            <th><span jhiTranslate="sergicApp.ribTiers.civilite">Civilite</span></th>
+            <th><span jhiTranslate="sergicApp.ribTiers.titulaireDuCompte">Titulaire Du Compte</span></th>
+            <th><span jhiTranslate="sergicApp.ribTiers.numInterneMaya">Num Interne Maya</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let ribTiers of ribTiers ;trackBy: trackId">
+                <td><a [routerLink]="['../rib-tiers', ribTiers.id ]">{{ribTiers.id}}</a></td>
+                <td>{{ribTiers.domiciliation}}</td>
+                <td>{{ribTiers.codeBanque}}</td>
+                <td>{{ribTiers.codeGuichet}}</td>
+                <td>{{ribTiers.numCompte}}</td>
+                <td>{{ribTiers.cleRib}}</td>
+                <td>{{ribTiers.iban}}</td>
+                <td>{{ribTiers.bic}}</td>
+                <td>{{ribTiers.libelle}}</td>
+                <td jhiTranslate="{{'sergicApp.Civilite.' + ribTiers.civilite}}">{{ribTiers.civilite}}</td>
+                <td>{{ribTiers.titulaireDuCompte}}</td>
+                <td>{{ribTiers.numInterneMaya}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../rib-tiers', ribTiers.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'rib-tiers/'+ ribTiers.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'rib-tiers/'+ ribTiers.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

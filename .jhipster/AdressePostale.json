@@ -1,0 +1,35 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "codePostal",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nomVille",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numeroVoie",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "complementAdresse",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numINSEE",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pays",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170921142245",
+    "entityTableName": "adresse_postale",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

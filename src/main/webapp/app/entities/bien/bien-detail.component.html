@@ -1,0 +1,51 @@
+
+<div *ngIf="bien">
+    <h2><span jhiTranslate="sergicApp.bien.detail.title">Bien</span> {{bien.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="sergicApp.bien.referenceBien">Reference Bien</span></dt>
+        <dd>
+            <span>{{bien.referenceBien}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.bien.codeBien">Code Bien</span></dt>
+        <dd>
+            <span>{{bien.codeBien}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.bien.dureeVisiteLocation">Duree Visite Location</span></dt>
+        <dd>
+            <span>{{bien.dureeVisiteLocation}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.bien.typeBien">Type Bien</span></dt>
+        <dd>
+            <div *ngIf="bien.typeBien">
+                <a [routerLink]="['/type-bien', bien.typeBien?.id]">{{bien.typeBien?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.bien.mandat">Mandat</span></dt>
+        <dd>
+            <div *ngIf="bien.mandat">
+                <a [routerLink]="['/mandat', bien.mandat?.id]">{{bien.mandat?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.bien.adressePostale">Adresse Postale</span></dt>
+        <dd>
+            <div *ngIf="bien.adressePostale">
+                <a [routerLink]="['/adresse-postale', bien.adressePostale?.id]">{{bien.adressePostale?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'bien/'+ bien.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

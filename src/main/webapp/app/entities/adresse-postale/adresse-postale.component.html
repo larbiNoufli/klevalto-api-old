@@ -1,0 +1,66 @@
+<div>
+    <h2>
+        <span jhiTranslate="sergicApp.adressePostale.home.title">Adresse Postales</span>
+        <button class="btn btn-primary float-right jh-create-entity create-adresse-postale" [routerLink]="['/', { outlets: { popup: ['adresse-postale-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="sergicApp.adressePostale.home.createLabel">
+            Create new Adresse Postale
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="adressePostales">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="sergicApp.adressePostale.codePostal">Code Postal</span></th>
+            <th><span jhiTranslate="sergicApp.adressePostale.nomVille">Nom Ville</span></th>
+            <th><span jhiTranslate="sergicApp.adressePostale.numeroVoie">Numero Voie</span></th>
+            <th><span jhiTranslate="sergicApp.adressePostale.complementAdresse">Complement Adresse</span></th>
+            <th><span jhiTranslate="sergicApp.adressePostale.numINSEE">Num INSEE</span></th>
+            <th><span jhiTranslate="sergicApp.adressePostale.pays">Pays</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let adressePostale of adressePostales ;trackBy: trackId">
+                <td><a [routerLink]="['../adresse-postale', adressePostale.id ]">{{adressePostale.id}}</a></td>
+                <td>{{adressePostale.codePostal}}</td>
+                <td>{{adressePostale.nomVille}}</td>
+                <td>{{adressePostale.numeroVoie}}</td>
+                <td>{{adressePostale.complementAdresse}}</td>
+                <td>{{adressePostale.numINSEE}}</td>
+                <td>{{adressePostale.pays}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../adresse-postale', adressePostale.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'adresse-postale/'+ adressePostale.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'adresse-postale/'+ adressePostale.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

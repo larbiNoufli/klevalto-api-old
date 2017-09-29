@@ -1,0 +1,45 @@
+
+<div *ngIf="adressePostale">
+    <h2><span jhiTranslate="sergicApp.adressePostale.detail.title">Adresse Postale</span> {{adressePostale.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="sergicApp.adressePostale.codePostal">Code Postal</span></dt>
+        <dd>
+            <span>{{adressePostale.codePostal}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.adressePostale.nomVille">Nom Ville</span></dt>
+        <dd>
+            <span>{{adressePostale.nomVille}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.adressePostale.numeroVoie">Numero Voie</span></dt>
+        <dd>
+            <span>{{adressePostale.numeroVoie}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.adressePostale.complementAdresse">Complement Adresse</span></dt>
+        <dd>
+            <span>{{adressePostale.complementAdresse}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.adressePostale.numINSEE">Num INSEE</span></dt>
+        <dd>
+            <span>{{adressePostale.numINSEE}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.adressePostale.pays">Pays</span></dt>
+        <dd>
+            <span>{{adressePostale.pays}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'adresse-postale/'+ adressePostale.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

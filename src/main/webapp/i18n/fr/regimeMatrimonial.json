@@ -1,0 +1,15 @@
+{
+    "sergicApp": {
+        "RegimeMatrimonial" : {
+            "null": "",
+            "PACSE": "PACSE",
+            "SEPARE": "SEPARE",
+            "VEUF": "VEUF",
+            "SANS_OBJET": "SANS_OBJET",
+            "CELIBATAIRE": "CELIBATAIRE",
+            "DIVORCE": "DIVORCE",
+            "CONCUBIN": "CONCUBIN",
+            "MARIE": "MARIE"
+        }
+    }
+}

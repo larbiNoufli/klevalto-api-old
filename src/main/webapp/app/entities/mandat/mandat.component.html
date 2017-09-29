@@ -1,0 +1,70 @@
+<div>
+    <h2>
+        <span jhiTranslate="sergicApp.mandat.home.title">Mandats</span>
+        <button class="btn btn-primary float-right jh-create-entity create-mandat" [routerLink]="['/', { outlets: { popup: ['mandat-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="sergicApp.mandat.home.createLabel">
+            Create new Mandat
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="mandats">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="sergicApp.mandat.isActif">Is Actif</span></th>
+            <th><span jhiTranslate="sergicApp.mandat.datedebutjuridique">Datedebutjuridique</span></th>
+            <th><span jhiTranslate="sergicApp.mandat.datefinjuridique">Datefinjuridique</span></th>
+            <th><span jhiTranslate="sergicApp.mandat.isValidated">Is Validated</span></th>
+            <th><span jhiTranslate="sergicApp.mandat.validationDate">Validation Date</span></th>
+            <th><span jhiTranslate="sergicApp.mandat.isRejected">Is Rejected</span></th>
+            <th><span jhiTranslate="sergicApp.mandat.refusalDate">Refusal Date</span></th>
+            <th><span jhiTranslate="sergicApp.mandat.valeurAchatDuBien">Valeur Achat Du Bien</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let mandat of mandats ;trackBy: trackId">
+                <td><a [routerLink]="['../mandat', mandat.id ]">{{mandat.id}}</a></td>
+                <td>{{mandat.isActif}}</td>
+                <td>{{mandat.datedebutjuridique}}</td>
+                <td>{{mandat.datefinjuridique | date:'medium'}}</td>
+                <td>{{mandat.isValidated}}</td>
+                <td>{{mandat.validationDate | date:'medium'}}</td>
+                <td>{{mandat.isRejected}}</td>
+                <td>{{mandat.refusalDate | date:'medium'}}</td>
+                <td>{{mandat.valeurAchatDuBien}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../mandat', mandat.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'mandat/'+ mandat.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'mandat/'+ mandat.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

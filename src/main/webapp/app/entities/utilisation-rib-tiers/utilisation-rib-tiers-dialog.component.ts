@@ -28,7 +28,7 @@ export class UtilisationRibTiersDialogComponent implements OnInit {
 
     constructor(
         public activeModal: NgbActiveModal,
-        private alertService: JhiAlertService,
+        private jhiAlertService: JhiAlertService,
         private utilisationRibTiersService: UtilisationRibTiersService,
         private prelevementService: PrelevementService,
         private ribTiersService: RibTiersService,
@@ -75,7 +75,7 @@ export class UtilisationRibTiersDialogComponent implements OnInit {
     }
 
     private onError(error: any) {
-        this.alertService.error(error.message, null, null);
+        this.jhiAlertService.error(error.message, null, null);
     }
 
     trackPrelevementById(index: number, item: Prelevement) {

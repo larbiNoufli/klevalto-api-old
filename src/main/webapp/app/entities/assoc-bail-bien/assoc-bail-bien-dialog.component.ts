@@ -31,7 +31,7 @@ export class AssocBailBienDialogComponent implements OnInit {
 
     constructor(
         public activeModal: NgbActiveModal,
-        private alertService: JhiAlertService,
+        private jhiAlertService: JhiAlertService,
         private assocBailBienService: AssocBailBienService,
         private tiersService: TiersService,
         private bailService: BailService,
@@ -81,7 +81,7 @@ export class AssocBailBienDialogComponent implements OnInit {
     }
 
     private onError(error: any) {
-        this.alertService.error(error.message, null, null);
+        this.jhiAlertService.error(error.message, null, null);
     }
 
     trackTiersById(index: number, item: Tiers) {

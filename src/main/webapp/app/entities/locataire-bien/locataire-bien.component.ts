@@ -19,7 +19,7 @@ locataireBiens: LocataireBien[];
 
     constructor(
         private locataireBienService: LocataireBienService,
-        private alertService: JhiAlertService,
+        private jhiAlertService: JhiAlertService,
         private eventManager: JhiEventManager,
         private principal: Principal
     ) {
@@ -53,6 +53,6 @@ locataireBiens: LocataireBien[];
     }
 
     private onError(error) {
-        this.alertService.error(error.message, null, null);
+        this.jhiAlertService.error(error.message, null, null);
     }
 }

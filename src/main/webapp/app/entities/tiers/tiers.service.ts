@@ -19,8 +19,7 @@ export class TiersService {
         const copy = this.convert(tiers);
         return this.http.post(this.resourceUrl, copy).map((res: Response) => {
             const jsonResponse = res.json();
-            this.convertItemFromServer(jsonResponse);
-            return jsonResponse;
+            return this.convertItemFromServer(jsonResponse);
         });
     }
 
@@ -28,16 +27,14 @@ export class TiersService {
         const copy = this.convert(tiers);
         return this.http.put(this.resourceUrl, copy).map((res: Response) => {
             const jsonResponse = res.json();
-            this.convertItemFromServer(jsonResponse);
-            return jsonResponse;
+            return this.convertItemFromServer(jsonResponse);
         });
     }
 
     find(id: number): Observable<Tiers> {
         return this.http.get(`${this.resourceUrl}/${id}`).map((res: Response) => {
             const jsonResponse = res.json();
-            this.convertItemFromServer(jsonResponse);
-            return jsonResponse;
+            return this.convertItemFromServer(jsonResponse);
         });
     }
 
@@ -53,21 +50,30 @@ export class TiersService {
 
     private convertResponse(res: Response): ResponseWrapper {
         const jsonResponse = res.json();
+        const result = [];
         for (let i = 0; i < jsonResponse.length; i++) {
-            this.convertItemFromServer(jsonResponse[i]);
+            result.push(this.convertItemFromServer(jsonResponse[i]));
         }
-        return new ResponseWrapper(res.headers, jsonResponse, res.status);
+        return new ResponseWrapper(res.headers, result, res.status);
     }
 
-    private convertItemFromServer(entity: any) {
+    /**
+     * Convert a returned JSON object to Tiers.
+     */
+    private convertItemFromServer(json: any): Tiers {
+        const entity: Tiers = Object.assign(new Tiers(), json);
         entity.dateEmbauche = this.dateUtils
-            .convertDateTimeFromServer(entity.dateEmbauche);
+            .convertDateTimeFromServer(json.dateEmbauche);
         entity.dateDeNaissance = this.dateUtils
-            .convertDateTimeFromServer(entity.dateDeNaissance);
+            .convertDateTimeFromServer(json.dateDeNaissance);
         entity.dateDeMariage = this.dateUtils
-            .convertDateTimeFromServer(entity.dateDeMariage);
+            .convertDateTimeFromServer(json.dateDeMariage);
+        return entity;
     }
 
+    /**
+     * Convert a Tiers to a JSON which can be sent to the server.
+     */
     private convert(tiers: Tiers): Tiers {
         const copy: Tiers = Object.assign({}, tiers);
 

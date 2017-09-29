@@ -19,7 +19,7 @@ assocMandatBiens: AssocMandatBien[];
 
     constructor(
         private assocMandatBienService: AssocMandatBienService,
-        private alertService: JhiAlertService,
+        private jhiAlertService: JhiAlertService,
         private eventManager: JhiEventManager,
         private principal: Principal
     ) {
@@ -53,6 +53,6 @@ assocMandatBiens: AssocMandatBien[];
     }
 
     private onError(error) {
-        this.alertService.error(error.message, null, null);
+        this.jhiAlertService.error(error.message, null, null);
     }
 }

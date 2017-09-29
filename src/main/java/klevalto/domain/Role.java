@@ -37,7 +37,7 @@ public class Role implements Serializable {
     @Column(name = "is_membre_cs")
     private Boolean isMembreCS;
 
-    // jhipster-needle-entity-add-field - Jhipster will add fields here, do not remove
+    // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
     }
@@ -110,7 +110,7 @@ public class Role implements Serializable {
     public void setIsMembreCS(Boolean isMembreCS) {
         this.isMembreCS = isMembreCS;
     }
-    // jhipster-needle-entity-add-getters-setters - Jhipster will add getters and setters here, do not remove
+    // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
     @Override
     public boolean equals(Object o) {

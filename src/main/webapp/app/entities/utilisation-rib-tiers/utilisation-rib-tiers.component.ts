@@ -19,7 +19,7 @@ utilisationRibTiers: UtilisationRibTiers[];
 
     constructor(
         private utilisationRibTiersService: UtilisationRibTiersService,
-        private alertService: JhiAlertService,
+        private jhiAlertService: JhiAlertService,
         private eventManager: JhiEventManager,
         private principal: Principal
     ) {
@@ -53,6 +53,6 @@ utilisationRibTiers: UtilisationRibTiers[];
     }
 
     private onError(error) {
-        this.alertService.error(error.message, null, null);
+        this.jhiAlertService.error(error.message, null, null);
     }
 }

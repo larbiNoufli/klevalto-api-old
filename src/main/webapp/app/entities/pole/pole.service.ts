@@ -16,20 +16,23 @@ export class PoleService {
     create(pole: Pole): Observable<Pole> {
         const copy = this.convert(pole);
         return this.http.post(this.resourceUrl, copy).map((res: Response) => {
-            return res.json();
+            const jsonResponse = res.json();
+            return this.convertItemFromServer(jsonResponse);
         });
     }
 
     update(pole: Pole): Observable<Pole> {
         const copy = this.convert(pole);
         return this.http.put(this.resourceUrl, copy).map((res: Response) => {
-            return res.json();
+            const jsonResponse = res.json();
+            return this.convertItemFromServer(jsonResponse);
         });
     }
 
     find(id: number): Observable<Pole> {
         return this.http.get(`${this.resourceUrl}/${id}`).map((res: Response) => {
-            return res.json();
+            const jsonResponse = res.json();
+            return this.convertItemFromServer(jsonResponse);
         });
     }
 
@@ -45,9 +48,24 @@ export class PoleService {
 
     private convertResponse(res: Response): ResponseWrapper {
         const jsonResponse = res.json();
-        return new ResponseWrapper(res.headers, jsonResponse, res.status);
+        const result = [];
+        for (let i = 0; i < jsonResponse.length; i++) {
+            result.push(this.convertItemFromServer(jsonResponse[i]));
+        }
+        return new ResponseWrapper(res.headers, result, res.status);
     }
 
+    /**
+     * Convert a returned JSON object to Pole.
+     */
+    private convertItemFromServer(json: any): Pole {
+        const entity: Pole = Object.assign(new Pole(), json);
+        return entity;
+    }
+
+    /**
+     * Convert a Pole to a JSON which can be sent to the server.
+     */
     private convert(pole: Pole): Pole {
         const copy: Pole = Object.assign({}, pole);
         return copy;

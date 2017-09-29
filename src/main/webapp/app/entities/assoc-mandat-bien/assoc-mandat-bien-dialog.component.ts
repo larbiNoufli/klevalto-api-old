@@ -31,7 +31,7 @@ export class AssocMandatBienDialogComponent implements OnInit {
 
     constructor(
         public activeModal: NgbActiveModal,
-        private alertService: JhiAlertService,
+        private jhiAlertService: JhiAlertService,
         private assocMandatBienService: AssocMandatBienService,
         private tiersService: TiersService,
         private mandatService: MandatService,
@@ -81,7 +81,7 @@ export class AssocMandatBienDialogComponent implements OnInit {
     }
 
     private onError(error: any) {
-        this.alertService.error(error.message, null, null);
+        this.jhiAlertService.error(error.message, null, null);
     }
 
     trackTiersById(index: number, item: Tiers) {

@@ -19,7 +19,7 @@ adressePostales: AdressePostale[];
 
     constructor(
         private adressePostaleService: AdressePostaleService,
-        private alertService: JhiAlertService,
+        private jhiAlertService: JhiAlertService,
         private eventManager: JhiEventManager,
         private principal: Principal
     ) {
@@ -53,6 +53,6 @@ adressePostales: AdressePostale[];
     }
 
     private onError(error) {
-        this.alertService.error(error.message, null, null);
+        this.jhiAlertService.error(error.message, null, null);
     }
 }

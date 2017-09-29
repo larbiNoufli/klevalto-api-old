@@ -146,7 +146,7 @@ public class Tiers implements Serializable {
     @ManyToOne
     private UtilisationRibTiers utilisationRibTiers;
 
-    // jhipster-needle-entity-add-field - Jhipster will add fields here, do not remove
+    // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
     }
@@ -661,7 +661,7 @@ public class Tiers implements Serializable {
     public void setUtilisationRibTiers(UtilisationRibTiers utilisationRibTiers) {
         this.utilisationRibTiers = utilisationRibTiers;
     }
-    // jhipster-needle-entity-add-getters-setters - Jhipster will add getters and setters here, do not remove
+    // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
     @Override
     public boolean equals(Object o) {

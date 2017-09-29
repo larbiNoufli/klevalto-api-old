@@ -1,0 +1,26 @@
+{
+    "sergicApp": {
+        "adressePostale" : {
+            "home": {
+                "title": "AdressePostales",
+                "createLabel": "Créer un nouveau Adresse Postale",
+                "createOrEditLabel": "Créer ou éditer un Adresse Postale"
+            },
+            "created": "Un nouveau Adresse Postale a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Adresse Postale avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Adresse Postale avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Adresse Postale {{ id }} ?"
+            },
+            "detail": {
+                "title": "Adresse Postale"
+            },
+            "codePostal": "Code Postal",
+            "nomVille": "Nom Ville",
+            "numeroVoie": "Numero Voie",
+            "complementAdresse": "Complement Adresse",
+            "numINSEE": "Num INSEE",
+            "pays": "Pays"
+        }
+    }
+}

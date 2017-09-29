@@ -1,0 +1,176 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "adressePostale",
+            "otherEntityName": "adressePostale",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "profil",
+            "otherEntityName": "profil",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "utilisationRibTiers",
+            "otherEntityName": "utilisationRibTiers",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "adresseMail",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "noMail",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "motDePasse",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "identifiantCompteTiers",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "civilite",
+            "fieldType": "Civilite",
+            "fieldValues": "M,MME"
+        },
+        {
+            "fieldName": "nom",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prenom",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telephoneMobile",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telephoneFixe",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isProspectLocataire",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "isLocataire",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "isBailleur",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "isBailleurRecherche",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "isPersonnelSergic",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "isAdministrateur",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "isAcquereur",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "isCoproprietaire",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "isProprietaire",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "isAutreActeur",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "isProprietaireLocationSaisonniere",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "isIntervenant",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "regimeMatrimonial",
+            "fieldType": "RegimeMatrimonial",
+            "fieldValues": "PACSE,SEPARE,VEUF,SANS_OBJET,CELIBATAIRE,DIVORCE,CONCUBIN,MARIE"
+        },
+        {
+            "fieldName": "employeur",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "profession",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dateEmbauche",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "revenuMensuel",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "nombreMoisDeRevenu",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "dateDeNaissance",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "lieuDeNaissance",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nationalite",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isSeparated",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "dateDeMariage",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "lieuDeMariage",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "commentaires",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "smsAccepted",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "adressePostaleNPAI",
+            "fieldType": "Boolean"
+        }
+    ],
+    "changelogDate": "20170921142244",
+    "entityTableName": "tiers",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

@@ -1,0 +1,242 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myTiersLabel" jhiTranslate="sergicApp.tiers.home.createOrEditLabel">Create or edit a Tiers</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!tiers.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="tiers.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.adresseMail" for="field_adresseMail">Adresse Mail</label>
+            <input type="text" class="form-control" name="adresseMail" id="field_adresseMail"
+                [(ngModel)]="tiers.adresseMail"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.noMail" for="field_noMail">No Mail</label>
+            <input type="checkbox" class="form-control" name="noMail" id="field_noMail"
+                [(ngModel)]="tiers.noMail"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.motDePasse" for="field_motDePasse">Mot De Passe</label>
+            <input type="text" class="form-control" name="motDePasse" id="field_motDePasse"
+                [(ngModel)]="tiers.motDePasse"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.identifiantCompteTiers" for="field_identifiantCompteTiers">Identifiant Compte Tiers</label>
+            <input type="text" class="form-control" name="identifiantCompteTiers" id="field_identifiantCompteTiers"
+                [(ngModel)]="tiers.identifiantCompteTiers"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.civilite" for="field_civilite">Civilite</label>
+            <select class="form-control" name="civilite" [(ngModel)]="tiers.civilite" id="field_civilite" >
+                <option value="M">{{'sergicApp.Civilite.M' | translate}}</option>
+                <option value="MME">{{'sergicApp.Civilite.MME' | translate}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.nom" for="field_nom">Nom</label>
+            <input type="text" class="form-control" name="nom" id="field_nom"
+                [(ngModel)]="tiers.nom"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.prenom" for="field_prenom">Prenom</label>
+            <input type="text" class="form-control" name="prenom" id="field_prenom"
+                [(ngModel)]="tiers.prenom"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.telephoneMobile" for="field_telephoneMobile">Telephone Mobile</label>
+            <input type="text" class="form-control" name="telephoneMobile" id="field_telephoneMobile"
+                [(ngModel)]="tiers.telephoneMobile"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.telephoneFixe" for="field_telephoneFixe">Telephone Fixe</label>
+            <input type="text" class="form-control" name="telephoneFixe" id="field_telephoneFixe"
+                [(ngModel)]="tiers.telephoneFixe"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.isProspectLocataire" for="field_isProspectLocataire">Is Prospect Locataire</label>
+            <input type="checkbox" class="form-control" name="isProspectLocataire" id="field_isProspectLocataire"
+                [(ngModel)]="tiers.isProspectLocataire"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.isLocataire" for="field_isLocataire">Is Locataire</label>
+            <input type="checkbox" class="form-control" name="isLocataire" id="field_isLocataire"
+                [(ngModel)]="tiers.isLocataire"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.isBailleur" for="field_isBailleur">Is Bailleur</label>
+            <input type="checkbox" class="form-control" name="isBailleur" id="field_isBailleur"
+                [(ngModel)]="tiers.isBailleur"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.isBailleurRecherche" for="field_isBailleurRecherche">Is Bailleur Recherche</label>
+            <input type="checkbox" class="form-control" name="isBailleurRecherche" id="field_isBailleurRecherche"
+                [(ngModel)]="tiers.isBailleurRecherche"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.isPersonnelSergic" for="field_isPersonnelSergic">Is Personnel Sergic</label>
+            <input type="checkbox" class="form-control" name="isPersonnelSergic" id="field_isPersonnelSergic"
+                [(ngModel)]="tiers.isPersonnelSergic"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.isAdministrateur" for="field_isAdministrateur">Is Administrateur</label>
+            <input type="checkbox" class="form-control" name="isAdministrateur" id="field_isAdministrateur"
+                [(ngModel)]="tiers.isAdministrateur"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.isAcquereur" for="field_isAcquereur">Is Acquereur</label>
+            <input type="checkbox" class="form-control" name="isAcquereur" id="field_isAcquereur"
+                [(ngModel)]="tiers.isAcquereur"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.isCoproprietaire" for="field_isCoproprietaire">Is Coproprietaire</label>
+            <input type="checkbox" class="form-control" name="isCoproprietaire" id="field_isCoproprietaire"
+                [(ngModel)]="tiers.isCoproprietaire"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.isProprietaire" for="field_isProprietaire">Is Proprietaire</label>
+            <input type="checkbox" class="form-control" name="isProprietaire" id="field_isProprietaire"
+                [(ngModel)]="tiers.isProprietaire"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.isAutreActeur" for="field_isAutreActeur">Is Autre Acteur</label>
+            <input type="checkbox" class="form-control" name="isAutreActeur" id="field_isAutreActeur"
+                [(ngModel)]="tiers.isAutreActeur"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.isProprietaireLocationSaisonniere" for="field_isProprietaireLocationSaisonniere">Is Proprietaire Location Saisonniere</label>
+            <input type="checkbox" class="form-control" name="isProprietaireLocationSaisonniere" id="field_isProprietaireLocationSaisonniere"
+                [(ngModel)]="tiers.isProprietaireLocationSaisonniere"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.isIntervenant" for="field_isIntervenant">Is Intervenant</label>
+            <input type="checkbox" class="form-control" name="isIntervenant" id="field_isIntervenant"
+                [(ngModel)]="tiers.isIntervenant"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.regimeMatrimonial" for="field_regimeMatrimonial">Regime Matrimonial</label>
+            <select class="form-control" name="regimeMatrimonial" [(ngModel)]="tiers.regimeMatrimonial" id="field_regimeMatrimonial" >
+                <option value="PACSE">{{'sergicApp.RegimeMatrimonial.PACSE' | translate}}</option>
+                <option value="SEPARE">{{'sergicApp.RegimeMatrimonial.SEPARE' | translate}}</option>
+                <option value="VEUF">{{'sergicApp.RegimeMatrimonial.VEUF' | translate}}</option>
+                <option value="SANS_OBJET">{{'sergicApp.RegimeMatrimonial.SANS_OBJET' | translate}}</option>
+                <option value="CELIBATAIRE">{{'sergicApp.RegimeMatrimonial.CELIBATAIRE' | translate}}</option>
+                <option value="DIVORCE">{{'sergicApp.RegimeMatrimonial.DIVORCE' | translate}}</option>
+                <option value="CONCUBIN">{{'sergicApp.RegimeMatrimonial.CONCUBIN' | translate}}</option>
+                <option value="MARIE">{{'sergicApp.RegimeMatrimonial.MARIE' | translate}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.employeur" for="field_employeur">Employeur</label>
+            <input type="text" class="form-control" name="employeur" id="field_employeur"
+                [(ngModel)]="tiers.employeur"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.profession" for="field_profession">Profession</label>
+            <input type="text" class="form-control" name="profession" id="field_profession"
+                [(ngModel)]="tiers.profession"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.dateEmbauche" for="field_dateEmbauche">Date Embauche</label>
+            <div class="d-flex">
+                <input id="field_dateEmbauche" type="datetime-local" class="form-control" name="dateEmbauche" [(ngModel)]="tiers.dateEmbauche"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.revenuMensuel" for="field_revenuMensuel">Revenu Mensuel</label>
+            <input type="number" class="form-control" name="revenuMensuel" id="field_revenuMensuel"
+                [(ngModel)]="tiers.revenuMensuel"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.nombreMoisDeRevenu" for="field_nombreMoisDeRevenu">Nombre Mois De Revenu</label>
+            <input type="number" class="form-control" name="nombreMoisDeRevenu" id="field_nombreMoisDeRevenu"
+                [(ngModel)]="tiers.nombreMoisDeRevenu"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.dateDeNaissance" for="field_dateDeNaissance">Date De Naissance</label>
+            <div class="d-flex">
+                <input id="field_dateDeNaissance" type="datetime-local" class="form-control" name="dateDeNaissance" [(ngModel)]="tiers.dateDeNaissance"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.lieuDeNaissance" for="field_lieuDeNaissance">Lieu De Naissance</label>
+            <input type="text" class="form-control" name="lieuDeNaissance" id="field_lieuDeNaissance"
+                [(ngModel)]="tiers.lieuDeNaissance"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.nationalite" for="field_nationalite">Nationalite</label>
+            <input type="text" class="form-control" name="nationalite" id="field_nationalite"
+                [(ngModel)]="tiers.nationalite"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.isSeparated" for="field_isSeparated">Is Separated</label>
+            <input type="checkbox" class="form-control" name="isSeparated" id="field_isSeparated"
+                [(ngModel)]="tiers.isSeparated"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.dateDeMariage" for="field_dateDeMariage">Date De Mariage</label>
+            <div class="d-flex">
+                <input id="field_dateDeMariage" type="datetime-local" class="form-control" name="dateDeMariage" [(ngModel)]="tiers.dateDeMariage"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.lieuDeMariage" for="field_lieuDeMariage">Lieu De Mariage</label>
+            <input type="text" class="form-control" name="lieuDeMariage" id="field_lieuDeMariage"
+                [(ngModel)]="tiers.lieuDeMariage"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.commentaires" for="field_commentaires">Commentaires</label>
+            <input type="text" class="form-control" name="commentaires" id="field_commentaires"
+                [(ngModel)]="tiers.commentaires"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.smsAccepted" for="field_smsAccepted">Sms Accepted</label>
+            <input type="checkbox" class="form-control" name="smsAccepted" id="field_smsAccepted"
+                [(ngModel)]="tiers.smsAccepted"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.adressePostaleNPAI" for="field_adressePostaleNPAI">Adresse Postale NPAI</label>
+            <input type="checkbox" class="form-control" name="adressePostaleNPAI" id="field_adressePostaleNPAI"
+                [(ngModel)]="tiers.adressePostaleNPAI"  />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.adressePostale" for="field_adressePostale">Adresse Postale</label>
+            <select class="form-control" id="field_adressePostale" name="adressePostale" [(ngModel)]="tiers.adressePostale" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="adressePostaleOption.id === tiers.adressePostale?.id ? tiers.adressePostale : adressePostaleOption" *ngFor="let adressePostaleOption of adressepostales; trackBy: trackAdressePostaleById">{{adressePostaleOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.profil" for="field_profil">Profil</label>
+            <select class="form-control" id="field_profil" name="profil" [(ngModel)]="tiers.profil" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="profilOption.id === tiers.profil?.id ? tiers.profil : profilOption" *ngFor="let profilOption of profils; trackBy: trackProfilById">{{profilOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.tiers.utilisationRibTiers" for="field_utilisationRibTiers">Utilisation Rib Tiers</label>
+            <select class="form-control" id="field_utilisationRibTiers" name="utilisationRibTiers" [(ngModel)]="tiers.utilisationRibTiers" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="utilisationRibTiersOption.id === tiers.utilisationRibTiers?.id ? tiers.utilisationRibTiers : utilisationRibTiersOption" *ngFor="let utilisationRibTiersOption of utilisationribtiers; trackBy: trackUtilisationRibTiersById">{{utilisationRibTiersOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

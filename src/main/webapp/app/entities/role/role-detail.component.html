@@ -1,0 +1,41 @@
+
+<div *ngIf="role">
+    <h2><span jhiTranslate="sergicApp.role.detail.title">Role</span> {{role.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="sergicApp.role.codeRole">Code Role</span></dt>
+        <dd>
+            <span>{{role.codeRole}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.role.nature">Nature</span></dt>
+        <dd>
+            <span>{{role.nature}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.role.isMembreGestion">Is Membre Gestion</span></dt>
+        <dd>
+            <span>{{role.isMembreGestion}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.role.libelle">Libelle</span></dt>
+        <dd>
+            <span>{{role.libelle}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.role.isMembreCS">Is Membre CS</span></dt>
+        <dd>
+            <span>{{role.isMembreCS}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'role/'+ role.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

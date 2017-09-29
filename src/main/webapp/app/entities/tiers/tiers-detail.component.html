@@ -1,0 +1,183 @@
+
+<div *ngIf="tiers">
+    <h2><span jhiTranslate="sergicApp.tiers.detail.title">Tiers</span> {{tiers.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="sergicApp.tiers.adresseMail">Adresse Mail</span></dt>
+        <dd>
+            <span>{{tiers.adresseMail}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.noMail">No Mail</span></dt>
+        <dd>
+            <span>{{tiers.noMail}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.motDePasse">Mot De Passe</span></dt>
+        <dd>
+            <span>{{tiers.motDePasse}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.identifiantCompteTiers">Identifiant Compte Tiers</span></dt>
+        <dd>
+            <span>{{tiers.identifiantCompteTiers}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.civilite">Civilite</span></dt>
+        <dd>
+            <span jhiTranslate="{{'sergicApp.Civilite.' + tiers.civilite}}">{{tiers.civilite}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.nom">Nom</span></dt>
+        <dd>
+            <span>{{tiers.nom}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.prenom">Prenom</span></dt>
+        <dd>
+            <span>{{tiers.prenom}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.telephoneMobile">Telephone Mobile</span></dt>
+        <dd>
+            <span>{{tiers.telephoneMobile}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.telephoneFixe">Telephone Fixe</span></dt>
+        <dd>
+            <span>{{tiers.telephoneFixe}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.isProspectLocataire">Is Prospect Locataire</span></dt>
+        <dd>
+            <span>{{tiers.isProspectLocataire}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.isLocataire">Is Locataire</span></dt>
+        <dd>
+            <span>{{tiers.isLocataire}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.isBailleur">Is Bailleur</span></dt>
+        <dd>
+            <span>{{tiers.isBailleur}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.isBailleurRecherche">Is Bailleur Recherche</span></dt>
+        <dd>
+            <span>{{tiers.isBailleurRecherche}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.isPersonnelSergic">Is Personnel Sergic</span></dt>
+        <dd>
+            <span>{{tiers.isPersonnelSergic}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.isAdministrateur">Is Administrateur</span></dt>
+        <dd>
+            <span>{{tiers.isAdministrateur}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.isAcquereur">Is Acquereur</span></dt>
+        <dd>
+            <span>{{tiers.isAcquereur}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.isCoproprietaire">Is Coproprietaire</span></dt>
+        <dd>
+            <span>{{tiers.isCoproprietaire}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.isProprietaire">Is Proprietaire</span></dt>
+        <dd>
+            <span>{{tiers.isProprietaire}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.isAutreActeur">Is Autre Acteur</span></dt>
+        <dd>
+            <span>{{tiers.isAutreActeur}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.isProprietaireLocationSaisonniere">Is Proprietaire Location Saisonniere</span></dt>
+        <dd>
+            <span>{{tiers.isProprietaireLocationSaisonniere}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.isIntervenant">Is Intervenant</span></dt>
+        <dd>
+            <span>{{tiers.isIntervenant}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.regimeMatrimonial">Regime Matrimonial</span></dt>
+        <dd>
+            <span jhiTranslate="{{'sergicApp.RegimeMatrimonial.' + tiers.regimeMatrimonial}}">{{tiers.regimeMatrimonial}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.employeur">Employeur</span></dt>
+        <dd>
+            <span>{{tiers.employeur}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.profession">Profession</span></dt>
+        <dd>
+            <span>{{tiers.profession}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.dateEmbauche">Date Embauche</span></dt>
+        <dd>
+            <span>{{tiers.dateEmbauche | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.revenuMensuel">Revenu Mensuel</span></dt>
+        <dd>
+            <span>{{tiers.revenuMensuel}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.nombreMoisDeRevenu">Nombre Mois De Revenu</span></dt>
+        <dd>
+            <span>{{tiers.nombreMoisDeRevenu}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.dateDeNaissance">Date De Naissance</span></dt>
+        <dd>
+            <span>{{tiers.dateDeNaissance | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.lieuDeNaissance">Lieu De Naissance</span></dt>
+        <dd>
+            <span>{{tiers.lieuDeNaissance}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.nationalite">Nationalite</span></dt>
+        <dd>
+            <span>{{tiers.nationalite}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.isSeparated">Is Separated</span></dt>
+        <dd>
+            <span>{{tiers.isSeparated}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.dateDeMariage">Date De Mariage</span></dt>
+        <dd>
+            <span>{{tiers.dateDeMariage | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.lieuDeMariage">Lieu De Mariage</span></dt>
+        <dd>
+            <span>{{tiers.lieuDeMariage}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.commentaires">Commentaires</span></dt>
+        <dd>
+            <span>{{tiers.commentaires}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.smsAccepted">Sms Accepted</span></dt>
+        <dd>
+            <span>{{tiers.smsAccepted}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.adressePostaleNPAI">Adresse Postale NPAI</span></dt>
+        <dd>
+            <span>{{tiers.adressePostaleNPAI}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.adressePostale">Adresse Postale</span></dt>
+        <dd>
+            <div *ngIf="tiers.adressePostale">
+                <a [routerLink]="['/adresse-postale', tiers.adressePostale?.id]">{{tiers.adressePostale?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.profil">Profil</span></dt>
+        <dd>
+            <div *ngIf="tiers.profil">
+                <a [routerLink]="['/profil', tiers.profil?.id]">{{tiers.profil?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.tiers.utilisationRibTiers">Utilisation Rib Tiers</span></dt>
+        <dd>
+            <div *ngIf="tiers.utilisationRibTiers">
+                <a [routerLink]="['/utilisation-rib-tiers', tiers.utilisationRibTiers?.id]">{{tiers.utilisationRibTiers?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'tiers/'+ tiers.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

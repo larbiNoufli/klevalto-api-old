@@ -1,0 +1,32 @@
+{
+    "sergicApp": {
+        "pole" : {
+            "home": {
+                "title": "Poles",
+                "createLabel": "Créer un nouveau Pole",
+                "createOrEditLabel": "Créer ou éditer un Pole"
+            },
+            "created": "Un nouveau Pole a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Pole avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Pole avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Pole {{ id }} ?"
+            },
+            "detail": {
+                "title": "Pole"
+            },
+            "codePole": "Code Pole",
+            "libelle": "Libelle",
+            "adresseVolet1": "Adresse Volet 1",
+            "adresseVolet2": "Adresse Volet 2",
+            "adresseVolet3": "Adresse Volet 3",
+            "adresseVolet4": "Adresse Volet 4",
+            "adresseVolet5": "Adresse Volet 5",
+            "adresseVolet6": "Adresse Volet 6",
+            "adresseVolet7": "Adresse Volet 7",
+            "codePostal": "Code Postal",
+            "descriptif": "Descriptif",
+            "ville": "Ville"
+        }
+    }
+}

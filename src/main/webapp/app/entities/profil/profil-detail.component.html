@@ -1,0 +1,75 @@
+
+<div *ngIf="profil">
+    <h2><span jhiTranslate="sergicApp.profil.detail.title">Profil</span> {{profil.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="sergicApp.profil.isActif">Is Actif</span></dt>
+        <dd>
+            <span>{{profil.isActif}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.profil.identifiantProspectLocataire">Identifiant Prospect Locataire</span></dt>
+        <dd>
+            <span>{{profil.identifiantProspectLocataire}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.profil.identifiantLocataire">Identifiant Locataire</span></dt>
+        <dd>
+            <span>{{profil.identifiantLocataire}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.profil.identifiantBailleur">Identifiant Bailleur</span></dt>
+        <dd>
+            <span>{{profil.identifiantBailleur}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.profil.identifiantBailleurRecherche">Identifiant Bailleur Recherche</span></dt>
+        <dd>
+            <span>{{profil.identifiantBailleurRecherche}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.profil.identifiantPersonnelSergic">Identifiant Personnel Sergic</span></dt>
+        <dd>
+            <span>{{profil.identifiantPersonnelSergic}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.profil.identifiantCoproprietaire">Identifiant Coproprietaire</span></dt>
+        <dd>
+            <span>{{profil.identifiantCoproprietaire}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.profil.identifiantProprietaireLocationSaisonniere">Identifiant Proprietaire Location Saisonniere</span></dt>
+        <dd>
+            <span>{{profil.identifiantProprietaireLocationSaisonniere}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.profil.identifiantIntervenant">Identifiant Intervenant</span></dt>
+        <dd>
+            <span>{{profil.identifiantIntervenant}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.profil.profil">Profil</span></dt>
+        <dd>
+            <div *ngIf="profil.profil">
+                <a [routerLink]="['/pole', profil.profil?.id]">{{profil.profil?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.profil.role">Role</span></dt>
+        <dd>
+            <div *ngIf="profil.role">
+                <a [routerLink]="['/role', profil.role?.id]">{{profil.role?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.profil.bien">Bien</span></dt>
+        <dd>
+            <div *ngIf="profil.bien">
+                <a [routerLink]="['/bien', profil.bien?.id]">{{profil.bien?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'profil/'+ profil.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

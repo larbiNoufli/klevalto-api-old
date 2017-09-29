@@ -1,0 +1,55 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myAdressePostaleLabel" jhiTranslate="sergicApp.adressePostale.home.createOrEditLabel">Create or edit a Adresse Postale</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!adressePostale.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="adressePostale.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.adressePostale.codePostal" for="field_codePostal">Code Postal</label>
+            <input type="text" class="form-control" name="codePostal" id="field_codePostal"
+                [(ngModel)]="adressePostale.codePostal"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.adressePostale.nomVille" for="field_nomVille">Nom Ville</label>
+            <input type="text" class="form-control" name="nomVille" id="field_nomVille"
+                [(ngModel)]="adressePostale.nomVille"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.adressePostale.numeroVoie" for="field_numeroVoie">Numero Voie</label>
+            <input type="number" class="form-control" name="numeroVoie" id="field_numeroVoie"
+                [(ngModel)]="adressePostale.numeroVoie"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.adressePostale.complementAdresse" for="field_complementAdresse">Complement Adresse</label>
+            <input type="text" class="form-control" name="complementAdresse" id="field_complementAdresse"
+                [(ngModel)]="adressePostale.complementAdresse"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.adressePostale.numINSEE" for="field_numINSEE">Num INSEE</label>
+            <input type="text" class="form-control" name="numINSEE" id="field_numINSEE"
+                [(ngModel)]="adressePostale.numINSEE"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.adressePostale.pays" for="field_pays">Pays</label>
+            <input type="text" class="form-control" name="pays" id="field_pays"
+                [(ngModel)]="adressePostale.pays"  />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

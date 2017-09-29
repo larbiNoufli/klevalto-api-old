@@ -1,0 +1,23 @@
+{
+    "sergicApp": {
+        "bail" : {
+            "home": {
+                "title": "Bails",
+                "createLabel": "Créer un nouveau Bail",
+                "createOrEditLabel": "Créer ou éditer un Bail"
+            },
+            "created": "Un nouveau Bail a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Bail avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Bail avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Bail {{ id }} ?"
+            },
+            "detail": {
+                "title": "Bail"
+            },
+            "dateCreation": "Date Creation",
+            "statutSignatureBailleur": "Statut Signature Bailleur",
+            "dateDetransfertVersMaya": "Date Detransfert Vers Maya"
+        }
+    }
+}

@@ -1,0 +1,49 @@
+
+<div *ngIf="utilisationRibTiers">
+    <h2><span jhiTranslate="sergicApp.utilisationRibTiers.detail.title">Utilisation Rib Tiers</span> {{utilisationRibTiers.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="sergicApp.utilisationRibTiers.identifiantMaya">Identifiant Maya</span></dt>
+        <dd>
+            <span>{{utilisationRibTiers.identifiantMaya}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.utilisationRibTiers.jourPrelevement">Jour Prelevement</span></dt>
+        <dd>
+            <span>{{utilisationRibTiers.jourPrelevement | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.utilisationRibTiers.numNationalEmetteur">Num National Emetteur</span></dt>
+        <dd>
+            <span>{{utilisationRibTiers.numNationalEmetteur}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.utilisationRibTiers.numeroOrdre">Numero Ordre</span></dt>
+        <dd>
+            <span>{{utilisationRibTiers.numeroOrdre}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.utilisationRibTiers.prelevement">Prelevement</span></dt>
+        <dd>
+            <div *ngIf="utilisationRibTiers.prelevement">
+                <a [routerLink]="['/prelevement', utilisationRibTiers.prelevement?.id]">{{utilisationRibTiers.prelevement?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.utilisationRibTiers.ribTiers">Rib Tiers</span></dt>
+        <dd>
+            <div *ngIf="utilisationRibTiers.ribTiers">
+                <a [routerLink]="['/rib-tiers', utilisationRibTiers.ribTiers?.id]">{{utilisationRibTiers.ribTiers?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'utilisation-rib-tiers/'+ utilisationRibTiers.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

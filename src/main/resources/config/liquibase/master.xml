@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170921142244_added_entity_Tiers.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170921142245_added_entity_AdressePostale.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170921142246_added_entity_Pole.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170921142247_added_entity_Profil.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170921142248_added_entity_Role.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170921142249_added_entity_Mandat.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170921142250_added_entity_Bail.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170921142251_added_entity_Bien.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170921142252_added_entity_TypeBien.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170921142253_added_entity_LocataireBien.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170921181107_added_entity_AssocMandatBien.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170921181108_added_entity_AssocBailBien.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170921181112_added_entity_Prelevement.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170921181113_added_entity_UtilisationRibTiers.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170921181114_added_entity_RibTiers.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20170921142244_added_entity_constraints_Tiers.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170921142247_added_entity_constraints_Profil.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170921142251_added_entity_constraints_Bien.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170921181107_added_entity_constraints_AssocMandatBien.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170921181108_added_entity_constraints_AssocBailBien.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170921181113_added_entity_constraints_UtilisationRibTiers.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+</databaseChangeLog>

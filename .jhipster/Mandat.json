@@ -1,0 +1,43 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "isActif",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "datedebutjuridique",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "datefinjuridique",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "isValidated",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "validationDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "isRejected",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "refusalDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "valeurAchatDuBien",
+            "fieldType": "Float"
+        }
+    ],
+    "changelogDate": "20170921142249",
+    "entityTableName": "mandat",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

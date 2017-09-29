@@ -1,0 +1,26 @@
+{
+    "sergicApp": {
+        "utilisationRibTiers" : {
+            "home": {
+                "title": "UtilisationRibTiers",
+                "createLabel": "Créer un nouveau Utilisation Rib Tiers",
+                "createOrEditLabel": "Créer ou éditer un Utilisation Rib Tiers"
+            },
+            "created": "Un nouveau Utilisation Rib Tiers a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Utilisation Rib Tiers avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Utilisation Rib Tiers avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Utilisation Rib Tiers {{ id }} ?"
+            },
+            "detail": {
+                "title": "Utilisation Rib Tiers"
+            },
+            "identifiantMaya": "Identifiant Maya",
+            "jourPrelevement": "Jour Prelevement",
+            "numNationalEmetteur": "Num National Emetteur",
+            "numeroOrdre": "Numero Ordre",
+            "prelevement": "Prelevement",
+            "ribTiers": "Rib Tiers"
+        }
+    }
+}

@@ -1,0 +1,59 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "codePole",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "libelle",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adresseVolet1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adresseVolet2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adresseVolet3",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adresseVolet4",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adresseVolet5",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adresseVolet6",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "adresseVolet7",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "codePostal",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descriptif",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ville",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170921142246",
+    "entityTableName": "pole",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

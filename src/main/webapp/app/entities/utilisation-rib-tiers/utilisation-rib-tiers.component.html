@@ -1,0 +1,74 @@
+<div>
+    <h2>
+        <span jhiTranslate="sergicApp.utilisationRibTiers.home.title">Utilisation Rib Tiers</span>
+        <button class="btn btn-primary float-right jh-create-entity create-utilisation-rib-tiers" [routerLink]="['/', { outlets: { popup: ['utilisation-rib-tiers-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="sergicApp.utilisationRibTiers.home.createLabel">
+            Create new Utilisation Rib Tiers
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="utilisationRibTiers">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="sergicApp.utilisationRibTiers.identifiantMaya">Identifiant Maya</span></th>
+            <th><span jhiTranslate="sergicApp.utilisationRibTiers.jourPrelevement">Jour Prelevement</span></th>
+            <th><span jhiTranslate="sergicApp.utilisationRibTiers.numNationalEmetteur">Num National Emetteur</span></th>
+            <th><span jhiTranslate="sergicApp.utilisationRibTiers.numeroOrdre">Numero Ordre</span></th>
+            <th><span jhiTranslate="sergicApp.utilisationRibTiers.prelevement">Prelevement</span></th>
+            <th><span jhiTranslate="sergicApp.utilisationRibTiers.ribTiers">Rib Tiers</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let utilisationRibTiers of utilisationRibTiers ;trackBy: trackId">
+                <td><a [routerLink]="['../utilisation-rib-tiers', utilisationRibTiers.id ]">{{utilisationRibTiers.id}}</a></td>
+                <td>{{utilisationRibTiers.identifiantMaya}}</td>
+                <td>{{utilisationRibTiers.jourPrelevement | date:'medium'}}</td>
+                <td>{{utilisationRibTiers.numNationalEmetteur}}</td>
+                <td>{{utilisationRibTiers.numeroOrdre}}</td>
+                <td>
+                    <div *ngIf="utilisationRibTiers.prelevement">
+                        <a [routerLink]="['../prelevement', utilisationRibTiers.prelevement?.id ]" >{{utilisationRibTiers.prelevement?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="utilisationRibTiers.ribTiers">
+                        <a [routerLink]="['../rib-tiers', utilisationRibTiers.ribTiers?.id ]" >{{utilisationRibTiers.ribTiers?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../utilisation-rib-tiers', utilisationRibTiers.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'utilisation-rib-tiers/'+ utilisationRibTiers.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'utilisation-rib-tiers/'+ utilisationRibTiers.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

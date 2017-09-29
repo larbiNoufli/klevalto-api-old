@@ -1,0 +1,20 @@
+{
+    "sergicApp": {
+        "locataireBien" : {
+            "home": {
+                "title": "LocataireBiens",
+                "createLabel": "Créer un nouveau Locataire Bien",
+                "createOrEditLabel": "Créer ou éditer un Locataire Bien"
+            },
+            "created": "Un nouveau Locataire Bien a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Locataire Bien avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Locataire Bien avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Locataire Bien {{ id }} ?"
+            },
+            "detail": {
+                "title": "Locataire Bien"
+            }
+        }
+    }
+}

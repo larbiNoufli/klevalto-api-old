@@ -1,0 +1,14 @@
+version: '2'
+services:
+    sergic-app:
+        image: sergic
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://sergic-postgresql:5432/sergic
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+        ports:
+            - 8080:8080
+    sergic-postgresql:
+        extends:
+            file: postgresql.yml
+            service: sergic-postgresql

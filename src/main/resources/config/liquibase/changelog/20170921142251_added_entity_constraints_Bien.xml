@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Bien.
+    -->
+    <changeSet id="20170921142251-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="type_bien_id"
+                                 baseTableName="bien"
+                                 constraintName="fk_bien_type_bien_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="type_bien"/>
+
+        <addForeignKeyConstraint baseColumnNames="mandat_id"
+                                 baseTableName="bien"
+                                 constraintName="fk_bien_mandat_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="mandat"/>
+
+        <addForeignKeyConstraint baseColumnNames="adresse_postale_id"
+                                 baseTableName="bien"
+                                 constraintName="fk_bien_adresse_postale_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="adresse_postale"/>
+
+    </changeSet>
+</databaseChangeLog>

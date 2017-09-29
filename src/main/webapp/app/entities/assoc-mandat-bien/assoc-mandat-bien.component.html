@@ -1,0 +1,88 @@
+<div>
+    <h2>
+        <span jhiTranslate="sergicApp.assocMandatBien.home.title">Assoc Mandat Biens</span>
+        <button class="btn btn-primary float-right jh-create-entity create-assoc-mandat-bien" [routerLink]="['/', { outlets: { popup: ['assoc-mandat-bien-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="sergicApp.assocMandatBien.home.createLabel">
+            Create new Assoc Mandat Bien
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="assocMandatBiens">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="sergicApp.assocMandatBien.isActif">Is Actif</span></th>
+            <th><span jhiTranslate="sergicApp.assocMandatBien.datedebutjuridique">Datedebutjuridique</span></th>
+            <th><span jhiTranslate="sergicApp.assocMandatBien.datefinjuridique">Datefinjuridique</span></th>
+            <th><span jhiTranslate="sergicApp.assocMandatBien.isValidated">Is Validated</span></th>
+            <th><span jhiTranslate="sergicApp.assocMandatBien.validationDate">Validation Date</span></th>
+            <th><span jhiTranslate="sergicApp.assocMandatBien.isRejected">Is Rejected</span></th>
+            <th><span jhiTranslate="sergicApp.assocMandatBien.refusalDate">Refusal Date</span></th>
+            <th><span jhiTranslate="sergicApp.assocMandatBien.valeurAchatDuBien">Valeur Achat Du Bien</span></th>
+            <th><span jhiTranslate="sergicApp.assocMandatBien.tiers">Tiers</span></th>
+            <th><span jhiTranslate="sergicApp.assocMandatBien.mandat">Mandat</span></th>
+            <th><span jhiTranslate="sergicApp.assocMandatBien.bien">Bien</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let assocMandatBien of assocMandatBiens ;trackBy: trackId">
+                <td><a [routerLink]="['../assoc-mandat-bien', assocMandatBien.id ]">{{assocMandatBien.id}}</a></td>
+                <td>{{assocMandatBien.isActif}}</td>
+                <td>{{assocMandatBien.datedebutjuridique | date:'medium'}}</td>
+                <td>{{assocMandatBien.datefinjuridique | date:'medium'}}</td>
+                <td>{{assocMandatBien.isValidated}}</td>
+                <td>{{assocMandatBien.validationDate | date:'medium'}}</td>
+                <td>{{assocMandatBien.isRejected}}</td>
+                <td>{{assocMandatBien.refusalDate | date:'medium'}}</td>
+                <td>{{assocMandatBien.valeurAchatDuBien}}</td>
+                <td>
+                    <div *ngIf="assocMandatBien.tiers">
+                        <a [routerLink]="['../tiers', assocMandatBien.tiers?.id ]" >{{assocMandatBien.tiers?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="assocMandatBien.mandat">
+                        <a [routerLink]="['../mandat', assocMandatBien.mandat?.id ]" >{{assocMandatBien.mandat?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="assocMandatBien.bien">
+                        <a [routerLink]="['../bien', assocMandatBien.bien?.id ]" >{{assocMandatBien.bien?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../assoc-mandat-bien', assocMandatBien.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'assoc-mandat-bien/'+ assocMandatBien.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'assoc-mandat-bien/'+ assocMandatBien.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

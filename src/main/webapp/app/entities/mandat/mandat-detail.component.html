@@ -1,0 +1,53 @@
+
+<div *ngIf="mandat">
+    <h2><span jhiTranslate="sergicApp.mandat.detail.title">Mandat</span> {{mandat.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="sergicApp.mandat.isActif">Is Actif</span></dt>
+        <dd>
+            <span>{{mandat.isActif}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.mandat.datedebutjuridique">Datedebutjuridique</span></dt>
+        <dd>
+            <span>{{mandat.datedebutjuridique}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.mandat.datefinjuridique">Datefinjuridique</span></dt>
+        <dd>
+            <span>{{mandat.datefinjuridique | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.mandat.isValidated">Is Validated</span></dt>
+        <dd>
+            <span>{{mandat.isValidated}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.mandat.validationDate">Validation Date</span></dt>
+        <dd>
+            <span>{{mandat.validationDate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.mandat.isRejected">Is Rejected</span></dt>
+        <dd>
+            <span>{{mandat.isRejected}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.mandat.refusalDate">Refusal Date</span></dt>
+        <dd>
+            <span>{{mandat.refusalDate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.mandat.valeurAchatDuBien">Valeur Achat Du Bien</span></dt>
+        <dd>
+            <span>{{mandat.valeurAchatDuBien}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'mandat/'+ mandat.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

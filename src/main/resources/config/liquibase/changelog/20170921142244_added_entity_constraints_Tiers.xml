@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Tiers.
+    -->
+    <changeSet id="20170921142244-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="adresse_postale_id"
+                                 baseTableName="tiers"
+                                 constraintName="fk_tiers_adresse_postale_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="adresse_postale"/>
+
+        <addForeignKeyConstraint baseColumnNames="profil_id"
+                                 baseTableName="tiers"
+                                 constraintName="fk_tiers_profil_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="profil"/>
+
+        <addForeignKeyConstraint baseColumnNames="utilisation_rib_tiers_id"
+                                 baseTableName="tiers"
+                                 constraintName="fk_tiers_utilisation_rib_tiers_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="utilisation_rib_tiers"/>
+
+    </changeSet>
+</databaseChangeLog>

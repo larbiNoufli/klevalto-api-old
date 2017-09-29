@@ -1,0 +1,48 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "typeBien",
+            "otherEntityName": "typeBien",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "bien"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "mandat",
+            "otherEntityName": "mandat",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "bien"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "adressePostale",
+            "otherEntityName": "adressePostale",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "bien"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "referenceBien",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "codeBien",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dureeVisiteLocation",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170921142251",
+    "entityTableName": "bien",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

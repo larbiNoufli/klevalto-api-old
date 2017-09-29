@@ -1,0 +1,40 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "prelevement",
+            "otherEntityName": "prelevement",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "ribTiers",
+            "otherEntityName": "ribTiers",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "identifiantMaya",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "jourPrelevement",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "numNationalEmetteur",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numeroOrdre",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170921181113",
+    "entityTableName": "utilisation_rib_tiers",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

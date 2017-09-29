@@ -1,0 +1,31 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "codeRole",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nature",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isMembreGestion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "libelle",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isMembreCS",
+            "fieldType": "Boolean"
+        }
+    ],
+    "changelogDate": "20170921142248",
+    "entityTableName": "role",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

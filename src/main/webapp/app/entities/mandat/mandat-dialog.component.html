@@ -1,0 +1,71 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myMandatLabel" jhiTranslate="sergicApp.mandat.home.createOrEditLabel">Create or edit a Mandat</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!mandat.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="mandat.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.mandat.isActif" for="field_isActif">Is Actif</label>
+            <input type="checkbox" class="form-control" name="isActif" id="field_isActif"
+                [(ngModel)]="mandat.isActif"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.mandat.datedebutjuridique" for="field_datedebutjuridique">Datedebutjuridique</label>
+            <input type="checkbox" class="form-control" name="datedebutjuridique" id="field_datedebutjuridique"
+                [(ngModel)]="mandat.datedebutjuridique"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.mandat.datefinjuridique" for="field_datefinjuridique">Datefinjuridique</label>
+            <div class="d-flex">
+                <input id="field_datefinjuridique" type="datetime-local" class="form-control" name="datefinjuridique" [(ngModel)]="mandat.datefinjuridique"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.mandat.isValidated" for="field_isValidated">Is Validated</label>
+            <input type="checkbox" class="form-control" name="isValidated" id="field_isValidated"
+                [(ngModel)]="mandat.isValidated"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.mandat.validationDate" for="field_validationDate">Validation Date</label>
+            <div class="d-flex">
+                <input id="field_validationDate" type="datetime-local" class="form-control" name="validationDate" [(ngModel)]="mandat.validationDate"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.mandat.isRejected" for="field_isRejected">Is Rejected</label>
+            <input type="checkbox" class="form-control" name="isRejected" id="field_isRejected"
+                [(ngModel)]="mandat.isRejected"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.mandat.refusalDate" for="field_refusalDate">Refusal Date</label>
+            <div class="d-flex">
+                <input id="field_refusalDate" type="datetime-local" class="form-control" name="refusalDate" [(ngModel)]="mandat.refusalDate"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.mandat.valeurAchatDuBien" for="field_valeurAchatDuBien">Valeur Achat Du Bien</label>
+            <input type="number" class="form-control" name="valeurAchatDuBien" id="field_valeurAchatDuBien"
+                [(ngModel)]="mandat.valeurAchatDuBien"  />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

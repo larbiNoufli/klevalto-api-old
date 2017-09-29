@@ -1,0 +1,91 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myProfilLabel" jhiTranslate="sergicApp.profil.home.createOrEditLabel">Create or edit a Profil</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!profil.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="profil.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.profil.isActif" for="field_isActif">Is Actif</label>
+            <input type="checkbox" class="form-control" name="isActif" id="field_isActif"
+                [(ngModel)]="profil.isActif"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.profil.identifiantProspectLocataire" for="field_identifiantProspectLocataire">Identifiant Prospect Locataire</label>
+            <input type="text" class="form-control" name="identifiantProspectLocataire" id="field_identifiantProspectLocataire"
+                [(ngModel)]="profil.identifiantProspectLocataire"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.profil.identifiantLocataire" for="field_identifiantLocataire">Identifiant Locataire</label>
+            <input type="text" class="form-control" name="identifiantLocataire" id="field_identifiantLocataire"
+                [(ngModel)]="profil.identifiantLocataire"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.profil.identifiantBailleur" for="field_identifiantBailleur">Identifiant Bailleur</label>
+            <input type="text" class="form-control" name="identifiantBailleur" id="field_identifiantBailleur"
+                [(ngModel)]="profil.identifiantBailleur"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.profil.identifiantBailleurRecherche" for="field_identifiantBailleurRecherche">Identifiant Bailleur Recherche</label>
+            <input type="text" class="form-control" name="identifiantBailleurRecherche" id="field_identifiantBailleurRecherche"
+                [(ngModel)]="profil.identifiantBailleurRecherche"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.profil.identifiantPersonnelSergic" for="field_identifiantPersonnelSergic">Identifiant Personnel Sergic</label>
+            <input type="text" class="form-control" name="identifiantPersonnelSergic" id="field_identifiantPersonnelSergic"
+                [(ngModel)]="profil.identifiantPersonnelSergic"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.profil.identifiantCoproprietaire" for="field_identifiantCoproprietaire">Identifiant Coproprietaire</label>
+            <input type="text" class="form-control" name="identifiantCoproprietaire" id="field_identifiantCoproprietaire"
+                [(ngModel)]="profil.identifiantCoproprietaire"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.profil.identifiantProprietaireLocationSaisonniere" for="field_identifiantProprietaireLocationSaisonniere">Identifiant Proprietaire Location Saisonniere</label>
+            <input type="text" class="form-control" name="identifiantProprietaireLocationSaisonniere" id="field_identifiantProprietaireLocationSaisonniere"
+                [(ngModel)]="profil.identifiantProprietaireLocationSaisonniere"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.profil.identifiantIntervenant" for="field_identifiantIntervenant">Identifiant Intervenant</label>
+            <input type="text" class="form-control" name="identifiantIntervenant" id="field_identifiantIntervenant"
+                [(ngModel)]="profil.identifiantIntervenant"  />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.profil.profil" for="field_profil">Profil</label>
+            <select class="form-control" id="field_profil" name="profil" [(ngModel)]="profil.profil">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="poleOption.id === profil.profil?.id ? profil.profil : poleOption" *ngFor="let poleOption of profils; trackBy: trackPoleById">{{poleOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.profil.role" for="field_role">Role</label>
+            <select class="form-control" id="field_role" name="role" [(ngModel)]="profil.role" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="roleOption.id === profil.role?.id ? profil.role : roleOption" *ngFor="let roleOption of roles; trackBy: trackRoleById">{{roleOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.profil.bien" for="field_bien">Bien</label>
+            <select class="form-control" id="field_bien" name="bien" [(ngModel)]="profil.bien" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="bienOption.id === profil.bien?.id ? profil.bien : bienOption" *ngFor="let bienOption of biens; trackBy: trackBienById">{{bienOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

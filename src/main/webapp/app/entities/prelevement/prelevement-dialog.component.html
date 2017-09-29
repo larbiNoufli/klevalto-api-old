@@ -1,0 +1,54 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myPrelevementLabel" jhiTranslate="sergicApp.prelevement.home.createOrEditLabel">Create or edit a Prelevement</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!prelevement.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="prelevement.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.prelevement.montantAPrelever" for="field_montantAPrelever">Montant A Prelever</label>
+            <input type="number" class="form-control" name="montantAPrelever" id="field_montantAPrelever"
+                [(ngModel)]="prelevement.montantAPrelever"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.prelevement.numeroOrdre" for="field_numeroOrdre">Numero Ordre</label>
+            <input type="number" class="form-control" name="numeroOrdre" id="field_numeroOrdre"
+                [(ngModel)]="prelevement.numeroOrdre"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.prelevement.dateDuPrelevement" for="field_dateDuPrelevement">Date Du Prelevement</label>
+            <div class="d-flex">
+                <input id="field_dateDuPrelevement" type="datetime-local" class="form-control" name="dateDuPrelevement" [(ngModel)]="prelevement.dateDuPrelevement"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.prelevement.isRecurrent" for="field_isRecurrent">Is Recurrent</label>
+            <input type="checkbox" class="form-control" name="isRecurrent" id="field_isRecurrent"
+                [(ngModel)]="prelevement.isRecurrent"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="sergicApp.prelevement.dateDetransfertVersMaya" for="field_dateDetransfertVersMaya">Date Detransfert Vers Maya</label>
+            <div class="d-flex">
+                <input id="field_dateDetransfertVersMaya" type="datetime-local" class="form-control" name="dateDetransfertVersMaya" [(ngModel)]="prelevement.dateDetransfertVersMaya"
+                  />
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

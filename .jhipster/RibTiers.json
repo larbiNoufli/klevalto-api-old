@@ -1,0 +1,56 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "domiciliation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "codeBanque",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "codeGuichet",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "numCompte",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cleRib",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "iban",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "bic",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "libelle",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "civilite",
+            "fieldType": "Civilite",
+            "fieldValues": "M,MME"
+        },
+        {
+            "fieldName": "titulaireDuCompte",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numInterneMaya",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20170921181114",
+    "entityTableName": "rib_tiers",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

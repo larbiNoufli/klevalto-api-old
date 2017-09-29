@@ -1,0 +1,69 @@
+
+<div *ngIf="pole">
+    <h2><span jhiTranslate="sergicApp.pole.detail.title">Pole</span> {{pole.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="sergicApp.pole.codePole">Code Pole</span></dt>
+        <dd>
+            <span>{{pole.codePole}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.pole.libelle">Libelle</span></dt>
+        <dd>
+            <span>{{pole.libelle}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.pole.adresseVolet1">Adresse Volet 1</span></dt>
+        <dd>
+            <span>{{pole.adresseVolet1}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.pole.adresseVolet2">Adresse Volet 2</span></dt>
+        <dd>
+            <span>{{pole.adresseVolet2}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.pole.adresseVolet3">Adresse Volet 3</span></dt>
+        <dd>
+            <span>{{pole.adresseVolet3}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.pole.adresseVolet4">Adresse Volet 4</span></dt>
+        <dd>
+            <span>{{pole.adresseVolet4}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.pole.adresseVolet5">Adresse Volet 5</span></dt>
+        <dd>
+            <span>{{pole.adresseVolet5}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.pole.adresseVolet6">Adresse Volet 6</span></dt>
+        <dd>
+            <span>{{pole.adresseVolet6}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.pole.adresseVolet7">Adresse Volet 7</span></dt>
+        <dd>
+            <span>{{pole.adresseVolet7}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.pole.codePostal">Code Postal</span></dt>
+        <dd>
+            <span>{{pole.codePostal}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.pole.descriptif">Descriptif</span></dt>
+        <dd>
+            <span>{{pole.descriptif}}</span>
+        </dd>
+        <dt><span jhiTranslate="sergicApp.pole.ville">Ville</span></dt>
+        <dd>
+            <span>{{pole.ville}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'pole/'+ pole.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -19,7 +19,7 @@ assocBailBiens: AssocBailBien[];
 
     constructor(
         private assocBailBienService: AssocBailBienService,
-        private alertService: JhiAlertService,
+        private jhiAlertService: JhiAlertService,
         private eventManager: JhiEventManager,
         private principal: Principal
     ) {
@@ -53,6 +53,6 @@ assocBailBiens: AssocBailBien[];
     }
 
     private onError(error) {
-        this.alertService.error(error.message, null, null);
+        this.jhiAlertService.error(error.message, null, null);
     }
 }

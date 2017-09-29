@@ -31,7 +31,7 @@ export class ProfilDialogComponent implements OnInit {
 
     constructor(
         public activeModal: NgbActiveModal,
-        private alertService: JhiAlertService,
+        private jhiAlertService: JhiAlertService,
         private profilService: ProfilService,
         private poleService: PoleService,
         private roleService: RoleService,
@@ -92,7 +92,7 @@ export class ProfilDialogComponent implements OnInit {
     }
 
     private onError(error: any) {
-        this.alertService.error(error.message, null, null);
+        this.jhiAlertService.error(error.message, null, null);
     }
 
     trackPoleById(index: number, item: Pole) {

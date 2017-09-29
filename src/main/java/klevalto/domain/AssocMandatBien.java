@@ -64,7 +64,7 @@ public class AssocMandatBien implements Serializable {
     @ManyToOne
     private Bien bien;
 
-    // jhipster-needle-entity-add-field - Jhipster will add fields here, do not remove
+    // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
     }
@@ -215,7 +215,7 @@ public class AssocMandatBien implements Serializable {
     public void setBien(Bien bien) {
         this.bien = bien;
     }
-    // jhipster-needle-entity-add-getters-setters - Jhipster will add getters and setters here, do not remove
+    // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
     @Override
     public boolean equals(Object o) {

@@ -58,7 +58,7 @@ public class RibTiers implements Serializable {
     @Column(name = "num_interne_maya")
     private Long numInterneMaya;
 
-    // jhipster-needle-entity-add-field - Jhipster will add fields here, do not remove
+    // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
     }
@@ -209,7 +209,7 @@ public class RibTiers implements Serializable {
     public void setNumInterneMaya(Long numInterneMaya) {
         this.numInterneMaya = numInterneMaya;
     }
-    // jhipster-needle-entity-add-getters-setters - Jhipster will add getters and setters here, do not remove
+    // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
     @Override
     public boolean equals(Object o) {

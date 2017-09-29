@@ -19,7 +19,7 @@ typeBiens: TypeBien[];
 
     constructor(
         private typeBienService: TypeBienService,
-        private alertService: JhiAlertService,
+        private jhiAlertService: JhiAlertService,
         private eventManager: JhiEventManager,
         private principal: Principal
     ) {
@@ -53,6 +53,6 @@ typeBiens: TypeBien[];
     }
 
     private onError(error) {
-        this.alertService.error(error.message, null, null);
+        this.jhiAlertService.error(error.message, null, null);
     }
 }

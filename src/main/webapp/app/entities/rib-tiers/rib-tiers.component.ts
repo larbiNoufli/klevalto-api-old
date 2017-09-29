@@ -19,7 +19,7 @@ ribTiers: RibTiers[];
 
     constructor(
         private ribTiersService: RibTiersService,
-        private alertService: JhiAlertService,
+        private jhiAlertService: JhiAlertService,
         private eventManager: JhiEventManager,
         private principal: Principal
     ) {
@@ -53,6 +53,6 @@ ribTiers: RibTiers[];
     }
 
     private onError(error) {
-        this.alertService.error(error.message, null, null);
+        this.jhiAlertService.error(error.message, null, null);
     }
 }

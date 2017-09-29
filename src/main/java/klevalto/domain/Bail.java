@@ -32,7 +32,7 @@ public class Bail implements Serializable {
     @Column(name = "date_detransfert_vers_maya")
     private ZonedDateTime dateDetransfertVersMaya;
 
-    // jhipster-needle-entity-add-field - Jhipster will add fields here, do not remove
+    // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
     }
@@ -79,7 +79,7 @@ public class Bail implements Serializable {
     public void setDateDetransfertVersMaya(ZonedDateTime dateDetransfertVersMaya) {
         this.dateDetransfertVersMaya = dateDetransfertVersMaya;
     }
-    // jhipster-needle-entity-add-getters-setters - Jhipster will add getters and setters here, do not remove
+    // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
     @Override
     public boolean equals(Object o) {

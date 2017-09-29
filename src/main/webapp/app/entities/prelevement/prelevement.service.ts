@@ -19,8 +19,7 @@ export class PrelevementService {
         const copy = this.convert(prelevement);
         return this.http.post(this.resourceUrl, copy).map((res: Response) => {
             const jsonResponse = res.json();
-            this.convertItemFromServer(jsonResponse);
-            return jsonResponse;
+            return this.convertItemFromServer(jsonResponse);
         });
     }
 
@@ -28,16 +27,14 @@ export class PrelevementService {
         const copy = this.convert(prelevement);
         return this.http.put(this.resourceUrl, copy).map((res: Response) => {
             const jsonResponse = res.json();
-            this.convertItemFromServer(jsonResponse);
-            return jsonResponse;
+            return this.convertItemFromServer(jsonResponse);
         });
     }
 
     find(id: number): Observable<Prelevement> {
         return this.http.get(`${this.resourceUrl}/${id}`).map((res: Response) => {
             const jsonResponse = res.json();
-            this.convertItemFromServer(jsonResponse);
-            return jsonResponse;
+            return this.convertItemFromServer(jsonResponse);
         });
     }
 
@@ -53,19 +50,28 @@ export class PrelevementService {
 
     private convertResponse(res: Response): ResponseWrapper {
         const jsonResponse = res.json();
+        const result = [];
         for (let i = 0; i < jsonResponse.length; i++) {
-            this.convertItemFromServer(jsonResponse[i]);
+            result.push(this.convertItemFromServer(jsonResponse[i]));
         }
-        return new ResponseWrapper(res.headers, jsonResponse, res.status);
+        return new ResponseWrapper(res.headers, result, res.status);
     }
 
-    private convertItemFromServer(entity: any) {
+    /**
+     * Convert a returned JSON object to Prelevement.
+     */
+    private convertItemFromServer(json: any): Prelevement {
+        const entity: Prelevement = Object.assign(new Prelevement(), json);
         entity.dateDuPrelevement = this.dateUtils
-            .convertDateTimeFromServer(entity.dateDuPrelevement);
+            .convertDateTimeFromServer(json.dateDuPrelevement);
         entity.dateDetransfertVersMaya = this.dateUtils
-            .convertDateTimeFromServer(entity.dateDetransfertVersMaya);
+            .convertDateTimeFromServer(json.dateDetransfertVersMaya);
+        return entity;
     }
 
+    /**
+     * Convert a Prelevement to a JSON which can be sent to the server.
+     */
     private convert(prelevement: Prelevement): Prelevement {
         const copy: Prelevement = Object.assign({}, prelevement);
 

@@ -31,7 +31,7 @@ export class BienDialogComponent implements OnInit {
 
     constructor(
         public activeModal: NgbActiveModal,
-        private alertService: JhiAlertService,
+        private jhiAlertService: JhiAlertService,
         private bienService: BienService,
         private typeBienService: TypeBienService,
         private mandatService: MandatService,
@@ -114,7 +114,7 @@ export class BienDialogComponent implements OnInit {
     }
 
     private onError(error: any) {
-        this.alertService.error(error.message, null, null);
+        this.jhiAlertService.error(error.message, null, null);
     }
 
     trackTypeBienById(index: number, item: TypeBien) {

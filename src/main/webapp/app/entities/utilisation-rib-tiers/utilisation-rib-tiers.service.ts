@@ -19,8 +19,7 @@ export class UtilisationRibTiersService {
         const copy = this.convert(utilisationRibTiers);
         return this.http.post(this.resourceUrl, copy).map((res: Response) => {
             const jsonResponse = res.json();
-            this.convertItemFromServer(jsonResponse);
-            return jsonResponse;
+            return this.convertItemFromServer(jsonResponse);
         });
     }
 
@@ -28,16 +27,14 @@ export class UtilisationRibTiersService {
         const copy = this.convert(utilisationRibTiers);
         return this.http.put(this.resourceUrl, copy).map((res: Response) => {
             const jsonResponse = res.json();
-            this.convertItemFromServer(jsonResponse);
-            return jsonResponse;
+            return this.convertItemFromServer(jsonResponse);
         });
     }
 
     find(id: number): Observable<UtilisationRibTiers> {
         return this.http.get(`${this.resourceUrl}/${id}`).map((res: Response) => {
             const jsonResponse = res.json();
-            this.convertItemFromServer(jsonResponse);
-            return jsonResponse;
+            return this.convertItemFromServer(jsonResponse);
         });
     }
 
@@ -53,17 +50,26 @@ export class UtilisationRibTiersService {
 
     private convertResponse(res: Response): ResponseWrapper {
         const jsonResponse = res.json();
+        const result = [];
         for (let i = 0; i < jsonResponse.length; i++) {
-            this.convertItemFromServer(jsonResponse[i]);
+            result.push(this.convertItemFromServer(jsonResponse[i]));
         }
-        return new ResponseWrapper(res.headers, jsonResponse, res.status);
+        return new ResponseWrapper(res.headers, result, res.status);
     }
 
-    private convertItemFromServer(entity: any) {
+    /**
+     * Convert a returned JSON object to UtilisationRibTiers.
+     */
+    private convertItemFromServer(json: any): UtilisationRibTiers {
+        const entity: UtilisationRibTiers = Object.assign(new UtilisationRibTiers(), json);
         entity.jourPrelevement = this.dateUtils
-            .convertDateTimeFromServer(entity.jourPrelevement);
+            .convertDateTimeFromServer(json.jourPrelevement);
+        return entity;
     }
 
+    /**
+     * Convert a UtilisationRibTiers to a JSON which can be sent to the server.
+     */
     private convert(utilisationRibTiers: UtilisationRibTiers): UtilisationRibTiers {
         const copy: UtilisationRibTiers = Object.assign({}, utilisationRibTiers);
 

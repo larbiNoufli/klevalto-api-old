@@ -21,9 +21,9 @@ spring:
             enabled: false
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:postgres://qaxzettuoudjke:4f129c546ff6547c41c120430fa5ab85f0b9e16ccd71376f30fcf952c71035cc@ec2-54-247-81-76.eu-west-1.compute.amazonaws.com:5432/dbfium97hqbkgl
-        username: qaxzettuoudjke
-        password: 4f129c546ff6547c41c120430fa5ab85f0b9e16ccd71376f30fcf952c71035cc
+        url: XXX
+        username: XXX
+        password: XXX
     jpa:
         database-platform: io.github.jhipster.domain.util.FixedPostgreSQL82Dialect
         database: POSTGRESQL
@@ -38,7 +38,7 @@ spring:
         host: smtp.sendgrid.net
         port: 25
         username: apikey
-        password: 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
+        password: XXXX
     thymeleaf:
         cache: true
 

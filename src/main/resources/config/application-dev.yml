@@ -46,7 +46,7 @@ spring:
         host: smtp.sendgrid.net
         port: 25
         username: apikey
-        password: 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
+        password: XXXX
     messages:
         cache-seconds: 1
     thymeleaf:

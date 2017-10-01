@@ -371,6 +371,10 @@
 			<artifactId>lombok</artifactId>
 			<version>1.16.6</version>
 		</dependency>
+        <dependency>
+            <groupId>org.springframework.ws</groupId>
+            <artifactId>spring-ws-core</artifactId>
+        </dependency>
 		
     </dependencies>
     <build>
@@ -754,6 +758,50 @@
                             </webResources>
                         </configuration>
                     </plugin>
+                    
+                                <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+			<plugin>
+				<groupId>org.jvnet.jaxb2.maven2</groupId>
+				<artifactId>maven-jaxb2-plugin</artifactId>
+				<version>0.13.1</version>
+				<executions>
+					<execution>
+						<id>schema1-generate</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<schemaLanguage>WSDL</schemaLanguage>
+							<generatePackage>yousign.cosignWS.wsdl</generatePackage>
+							<schemas>
+			
+								<schema>
+									<url>https://apidemo.yousign.fr:8181/CosignWS/CosignWS?wsdl</url>
+								</schema>
+							</schemas>
+						</configuration>
+					</execution>
+					<execution>
+						<id>schema2-generate</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<schemaLanguage>WSDL</schemaLanguage>
+							<generatePackage>yousign.authenticationWS.wsdl</generatePackage>
+							<schemas>
+			
+								<schema>
+									<url>https://apidemo.yousign.fr:8181/AuthenticationWS/AuthenticationWS?wsdl</url>
+								</schema>
+							</schemas>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
                 </plugins>
             </build>
             <properties>
@@ -955,6 +1003,8 @@
                     </plugin>
                 </plugins>
             </build>
+            
+
             <properties>
                 <!-- log configuration -->
                 <logback.loglevel>DEBUG</logback.loglevel>

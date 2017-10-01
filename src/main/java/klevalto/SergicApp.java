@@ -1,25 +1,26 @@
 package klevalto;
 
-import klevalto.config.ApplicationProperties;
-import klevalto.config.DefaultProfileUtil;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.util.Arrays;
+import java.util.Collection;
 
-import io.github.jhipster.config.JHipsterConstants;
+import javax.annotation.PostConstruct;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.actuate.autoconfigure.*;
+import org.springframework.boot.actuate.autoconfigure.MetricFilterAutoConfiguration;
+import org.springframework.boot.actuate.autoconfigure.MetricRepositoryAutoConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.liquibase.LiquibaseProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.env.Environment;
 
-import javax.annotation.PostConstruct;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
-import java.util.Arrays;
-import java.util.Collection;
+import io.github.jhipster.config.JHipsterConstants;
+import klevalto.config.ApplicationProperties;
+import klevalto.config.DefaultProfileUtil;
 
 @ComponentScan
 @EnableAutoConfiguration(exclude = {MetricFilterAutoConfiguration.class, MetricRepositoryAutoConfiguration.class})
@@ -81,4 +82,16 @@ public class SergicApp {
             env.getProperty("server.port"),
             env.getActiveProfiles());
     }
+    
+//	@Bean
+//	CommandLineRunner lookup(YousignClientService yousignClient) {
+//		return args -> {
+//			
+//			ConnectResponse response = yousignClient.getConnection();
+//			
+//			log.info("Resultat authentification Yousign [{}]", response.isReturn());
+//		};
+//	}
+	
+
 }

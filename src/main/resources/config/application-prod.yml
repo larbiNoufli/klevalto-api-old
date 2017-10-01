@@ -125,3 +125,14 @@ jhipster:
 # ===================================================================
 
 application:
+
+# ===================================================================
+# Yousign specific properties
+# ===================================================================
+
+yousign:
+    username: xxx
+    password: xxx
+    apikey: xxx
+    urlYousignAuthenticationWS: https://apidemo.yousign.fr:8181/AuthenticationWS/AuthenticationWS
+    urlYousignCosignWS: https://apidemo.yousign.fr:8181/CosignWS/CosignWS

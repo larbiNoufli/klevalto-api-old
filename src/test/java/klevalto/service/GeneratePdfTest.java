@@ -39,8 +39,8 @@ public class GeneratePdfTest {
         
         RESOURCES_DIR_SEPA = "src//test//resources//templates_pdf//mandat_prelevement//";
         
-        PATH_OUTPUT_MANDAT = "src//test//resources//mandatTest.pdf";
-        PATH_OUTPUT_BAIL = "src//test//resources//bailTest.pdf";
+        PATH_OUTPUT_MANDAT = "target//test-results//mandatTest.pdf";
+        PATH_OUTPUT_BAIL = "target//test-results//bailTest.pdf";
     }
 	
     @Autowired
